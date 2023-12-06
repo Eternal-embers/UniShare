@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>聚悦</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="使用和获取小说、图片、漫画、音乐、视频等娱乐资源的网页平台，可以用于本地使用和通过网页在线资源使用。">
+    <meta name="keywords" content=“小说,图片,漫画,音乐,视频,娱乐”>
+    <link rel="stylesheet" type="text/css" href="resource/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./images/UniShare.png" alt="logo" title="聚悦" />
+        </div>
+        <div class="nav">
+            <input type="radio" name="nav" id="nav-home" checked>
+            <input type="radio" name="nav" id="nav-community">
+            <input type="radio" name="nav" id="nav-contribute">
+            <input type="radio" name="nav" id="nav-activity">
+            <input type="radio" name="nav" id="nav-support">
+            <input type="radio" name="nav" id="nav-assets">
+            <div class="underline"></div>
+            <div class="nav-content">
+                <a href="">
+                    <label for="nav-home">
+                        <svg t="1701863222769" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="13399">
+                            <path
+                                d="M969.6 502.4l-118.4-112-323.2-300.8c-9.6-9.6-22.4-9.6-32 0l-313.6 297.6c-3.2 3.2-6.4 6.4-9.6 9.6l-118.4 112c-9.6 9.6-9.6 22.4 0 32s22.4 9.6 32 0l83.2-80 0 393.6c0 48 41.6 89.6 92.8 89.6l83.2 0c38.4 0 70.4-28.8 70.4-67.2l0-217.6 99.2 0 99.2 0 0 217.6c0 35.2 32 67.2 70.4 67.2l83.2 0c51.2 0 92.8-38.4 92.8-89.6l0-396.8 80 73.6c9.6 9.6 22.4 9.6 32 0C979.2 524.8 979.2 512 969.6 502.4zM809.6 857.6c0 25.6-19.2 44.8-44.8 44.8l-83.2 0c-12.8 0-22.4-9.6-22.4-22.4L659.2 640c0-12.8-9.6-22.4-22.4-22.4l-121.6 0-121.6 0c-12.8 0-22.4 9.6-22.4 22.4l0 240c0 12.8-9.6 22.4-22.4 22.4l-83.2 0c-25.6 0-44.8-19.2-44.8-44.8l0-438.4 294.4-281.6 294.4 281.6L809.6 857.6z"
+                                p-id="13400"></path>
+                        </svg>
+                        <span>首页</span>
+                    </label>
+                </a>
+                <a href="">
+                    <label for="nav-community">
+                        <svg t="1701862850596" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="11548">
+                            <path
+                                d="M508.811636 867.141818c-197.678545 0-358.469818-160.814545-358.469818-358.493091S311.156364 150.155636 508.811636 150.155636c197.678545 0 358.493091 160.814545 358.493091 358.493091S706.490182 867.141818 508.811636 867.141818z m0-670.440727c-172.008727 0-311.924364 139.938909-311.924363 311.947636S336.826182 820.596364 508.811636 820.596364c172.032 0 311.947636-139.938909 311.947637-311.947637S680.843636 196.701091 508.811636 196.701091z"
+                                p-id="11549"></path>
+                            <path
+                                d="M120.250182 874.030545c-48.034909 0-83.549091-12.730182-100.305455-41.728-43.357091-75.124364 75.613091-193.885091 150.365091-258.001454l30.301091 35.328c-117.387636 100.677818-155.066182 173.963636-140.357818 199.400727 26.670545 46.266182 235.799273 11.566545 515.700364-149.992727 279.877818-161.605818 414.487273-325.352727 387.770181-371.618909-13.312-23.133091-82.618182-28.997818-207.36 10.030545l-13.917091-44.427636c98.583273-30.836364 224-53.946182 261.585455 11.124364 57.274182 99.188364-160.302545 294.004364-404.805818 435.2-173.032727 99.909818-362.635636 174.685091-478.976 174.68509z"
+                                p-id="11550"></path>
+                        </svg>
+                        <span>社区</span>
+                    </label>
+                </a>
+
+                <a href="">
+                    <label for="nav-contribute">
+                        <svg t="1701863531358" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="19200">
+                            <path
+                                d="M610.142714 920.43334c-7.26604 0-14.327404-3.479512-18.727963-9.51749l-0.102339-0.204677L439.03258 667.861683c-0.102339-0.102339-0.204677-0.204677-0.307016-0.204677l-310.392964-22.719168-0.307016 0c-9.51749-1.228063-17.397561-8.289426-19.649011-17.704577-2.251449-9.210474 1.535079-19.034979 9.312812-24.458925l677.788527-429.515091 0.102339-0.102339c6.140316-4.093544 13.815711-5.219268 20.672397-2.763142 11.359584 4.195882 17.397561 15.453128 15.043774 26.608035l-198.536878 705.010594c-1.944433 8.903458-8.903458 15.964821-17.806916 17.909254C613.315211 920.228663 611.677793 920.43334 610.142714 920.43334zM191.78253 605.946832l261.679792 17.909254c0 0 0 0 0.102339 0l0.102339 0c6.447332 0.818709 12.280632 4.298221 16.06716 9.51749l0 0c0 0 0 0 0 0L598.680792 843.88407l177.762143-602.46732"
+                                p-id="19201"></path>
+                        </svg>
+                        <span>上传</span>
+                    </label>
+                </a>
+                <a href="">
+                    <label for="nav-activity">
+                        <svg t="1701862728659" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="11396">
+                            <path
+                                d="M981.523763 550.07232c-3.87072-51.32288-13.78304-102.35904-28.73344-147.6608-22.89664-69.4272-57.07776-135.72096-96.256-186.7776-10.71104-13.9264-31.39584-17.1008-46.2848-7.08608-14.86848 9.9328-18.26816 29.2864-7.61856 43.2128 35.10272 45.71136 65.90464 105.6768 86.79424 168.93952 13.45536 40.79616 22.40512 86.99904 25.9072 133.69344 12.75904 170.12736-62.11584 309.08416-206.90944 387.91168-23.71584-182.272-174.96064-241.7664-181.92384-244.4288a35.2256 35.2256 0 0 0-28.59008 1.6384c-131.6864 68.34176-170.02496 182.9888-181.1456 247.15264-130.29376-64.06144-209.5104-184.66816-209.5104-323.70688 0-93.63456 49.90976-180.40832 152.53504-265.17504 13.63968-11.28448 27.5456-22.38464 41.45152-33.4848 75.3664-60.1088 153.35424-122.22464 192.65536-216.80128 4.28032-10.19904 7.9872-19.456 11.14112-27.79136 69.4272 45.64992 219.68896 168.87808 268.45184 404.60288 3.4816 16.83456 20.95104 27.79136 38.83008 24.55552 18.00192-3.23584 29.77792-19.47648 26.27584-36.29056C771.214643 146.78016 528.977203 18.1248 501.452083 4.42368c-0.9216-0.512-1.90464-0.9216-2.88768-1.39264-16.42496-7.31136-36.0448-0.94208-44.09344 14.29504-2.2528 4.3008-3.33824 8.88832-3.39968 13.45536-3.11296 11.44832-16.03584 46.81728-18.98496 54.25152-33.25952 80.03584-101.60128 134.47168-173.93664 192.12288-14.19264 11.32544-28.3648 22.67136-42.33216 34.18112C99.777843 407.2448 40.959283 512.08192 40.959283 622.96064c0 178.93376 111.98464 331.81696 292.2496 398.86848 3.91168 1.47456 8.06912 2.17088 12.1856 2.17088a34.816 34.816 0 0 0 18.78016-5.4272c9.13408-5.79584 14.5408-15.52384 14.45888-25.8048-0.04096-6.30784 0.49152-150.44608 136.64256-230.89152 35.96288 19.31264 129.9456 83.6608 129.9456 229.74464 0 10.5472 5.7344 20.39808 15.17568 26.07104a35.0208 35.0208 0 0 0 31.66208 2.17088c197.03808-83.47648 305.2544-259.13344 289.46432-469.8112M473.087283 62.34112"
+                                fill="#000000" p-id="11397"></path>
+                        </svg>
+                        <span>活动</span>
+                    </label>
+                </a>
+                <a href="">
+                    <label for="nav-support">
+
+                        <svg t="1701864013626" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="24411">
+                            <path
+                                d="M259.2 528h-99.2c-19.2 0-32 12.8-32 32v288c0 19.2 16 32 32 32h96l3.2-352z m12.8-64l217.6-368c6.4-9.6 16-16 28.8-16 70.4 0 128 57.6 128 128v160h217.6c54.4 0 96 41.6 96 96v12.8l-48 384c-6.4 48-48 83.2-96 83.2h-656c-54.4 0-96-41.6-96-96v-288c0-54.4 44.8-96 96-96h112z m342.4-32c-19.2 0-32-12.8-32-32v-192c0-28.8-19.2-54.4-48-60.8l-211.2 358.4v374.4h492.8c16 0 28.8-12.8 32-28.8l48-384v-3.2c0-19.2-16-32-32-32h-249.6z"
+                                fill="#374E6B" p-id="24412"></path>
+                        </svg>
+                        <span>支持</span>
+                    </label>
+                </a>
+                <a href="">
+                    <label for="nav-assets">
+                        <svg t="1701864640239" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="75388" width="200" height="200">
+                            <path
+                                d="M497.69083 562.529258L3.577293 281.264629 497.69083 0l522.731877 281.264629zM93.009607 281.264629l404.681223 229.841048 427.486463-229.841048-426.59214-230.28821z"
+                                fill="#0F3567" p-id="75389"></path>
+                            <path
+                                d="M497.69083 793.264629L3.577293 512l148.01048-84.066376 21.910917 38.903057-79.59476 45.163319 404.681223 229.841048 427.486463-229.841048-90.773799-48.740611 21.463755-39.350219 163.661135 88.09083-522.731877 281.264629z"
+                                fill="#0F3567" p-id="75390"></path>
+                            <path
+                                d="M497.69083 1024L3.577293 742.735371l131.465502-74.675982 22.358078 38.903056-63.496943 35.772926 404.681223 230.28821 427.486463-230.28821-67.968559-36.667249 21.016594-39.350218 141.303056 76.017467-522.731877 281.264629z"
+                                fill="#0F3567" p-id="75391"></path>
+                        </svg>
+                        <span>资产</span>
+                    </label>
+                </a>
+            </div>
+        </div>
+        <div class="nav-search">
+            <form target="_blank" method="get" action="./index.html">
+                <div class="nav-search-content">
+                    <input class="input" type="text" placeholder="请输入搜索内容" name="keyword" />
+                    <div class="nav-search-clean">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8 14.75C11.7279 14.75 14.75 11.7279 14.75 8C14.75 4.27208 11.7279 1.25 8 1.25C4.27208 1.25 1.25 4.27208 1.25 8C1.25 11.7279 4.27208 14.75 8 14.75ZM9.64999 5.64303C9.84525 5.44777 10.1618 5.44777 10.3571 5.64303C10.5524 5.83829 10.5524 6.15487 10.3571 6.35014L8.70718 8.00005L10.3571 9.64997C10.5524 9.84523 10.5524 10.1618 10.3571 10.3571C10.1618 10.5523 9.84525 10.5523 9.64999 10.3571L8.00007 8.70716L6.35016 10.3571C6.15489 10.5523 5.83831 10.5523 5.64305 10.3571C5.44779 10.1618 5.44779 9.84523 5.64305 9.64997L7.29296 8.00005L5.64305 6.35014C5.44779 6.15487 5.44779 5.83829 5.64305 5.64303C5.83831 5.44777 6.15489 5.44777 6.35016 5.64303L8.00007 7.29294L9.64999 5.64303Z"
+                                fill="#7f7f7f"></path>
+                        </svg>
+                    </div>
+                </div>
+                <button type="submit/button"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="user"><i class="fa-regular fa-user"></i></div>
+        <div class="history"><i class="fa-regular fa-clock"></i></div>
+        <div class="mode">
+            <div id="light"><i class="fa-regular fa-sun"></i></div>
+            <div class="night"><i class="fa-regular fa-moon"></i></div>
+        </div>
+        <div class="setting">
+            <svg t="1701864970885" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                p-id="77265">
+                <path
+                    d="M554.666667 1024h-85.333334c-36.266667 0-64-27.733333-64-64v-78.933333c-27.733333-8.533333-53.333333-19.2-78.933333-32l-55.466667 55.466666c-25.6 25.6-66.133333 25.6-89.6 0l-59.733333-59.733333c-25.6-25.6-25.6-66.133333 0-89.6l55.466667-55.466667c-12.8-25.6-25.6-51.2-32-78.933333H64c-36.266667 0-64-27.733333-64-64v-85.333333c0-36.266667 27.733333-64 64-64h78.933333c8.533333-27.733333 19.2-53.333333 32-78.933334l-55.466666-55.466666c-25.6-25.6-25.6-66.133333 0-89.6l59.733333-59.733334c25.6-25.6 66.133333-25.6 89.6 0l55.466667 55.466667c25.6-12.8 51.2-25.6 78.933333-32V64c0-36.266667 27.733333-64 64-64h85.333333c36.266667 0 64 27.733333 64 64v78.933333c27.733333 8.533333 53.333333 19.2 78.933334 32l55.466666-55.466666c25.6-25.6 66.133333-25.6 89.6 0l59.733334 59.733333c25.6 25.6 25.6 66.133333 0 89.6l-55.466667 55.466667c12.8 25.6 25.6 51.2 32 78.933333H960c36.266667 0 64 27.733333 64 64v85.333333c0 36.266667-27.733333 64-64 64h-78.933333c-8.533333 27.733333-19.2 53.333333-32 78.933334l55.466666 55.466666c25.6 25.6 25.6 66.133333 0 89.6l-59.733333 59.733334c-25.6 25.6-66.133333 25.6-89.6 0l-55.466667-55.466667c-25.6 12.8-51.2 25.6-78.933333 32V960c-2.133333 36.266667-29.866667 64-66.133333 64zM320 793.6l14.933333 8.533333c29.866667 19.2 61.866667 32 98.133334 40.533334l17.066666 4.266666V960c0 12.8 8.533333 21.333333 21.333334 21.333333h85.333333c12.8 0 21.333333-8.533333 21.333333-21.333333v-113.066667l17.066667-4.266666c34.133333-8.533333 66.133333-21.333333 98.133333-40.533334l14.933334-8.533333 78.933333 78.933333c8.533333 8.533333 21.333333 8.533333 29.866667 0l59.733333-59.733333c8.533333-8.533333 8.533333-21.333333 0-29.866667L793.6 704l8.533333-14.933333c19.2-29.866667 32-61.866667 40.533334-98.133334l4.266666-17.066666H960c12.8 0 21.333333-8.533333 21.333333-21.333334v-85.333333c0-12.8-8.533333-21.333333-21.333333-21.333333h-113.066667l-4.266666-17.066667c-8.533333-34.133333-21.333333-66.133333-40.533334-98.133333l-8.533333-10.666667 78.933333-78.933333c8.533333-8.533333 8.533333-21.333333 0-29.866667L812.8 149.333333c-8.533333-8.533333-21.333333-8.533333-29.866667 0L704 230.4l-14.933333-8.533333c-29.866667-19.2-61.866667-32-98.133334-40.533334l-14.933333-4.266666V64c0-12.8-8.533333-21.333333-21.333333-21.333333h-85.333334c-12.8 0-21.333333 8.533333-21.333333 21.333333v113.066667l-17.066667 4.266666c-34.133333 8.533333-66.133333 21.333333-98.133333 40.533334l-12.8 8.533333L241.066667 149.333333c-8.533333-8.533333-21.333333-8.533333-29.866667 0L149.333333 211.2c-8.533333 8.533333-8.533333 21.333333 0 29.866667l78.933334 78.933333-8.533334 14.933333c-19.2 29.866667-32 61.866667-40.533333 98.133334l-2.133333 14.933333H64c-12.8 0-21.333333 8.533333-21.333333 21.333333v85.333334c0 12.8 8.533333 21.333333 21.333333 21.333333h113.066667l4.266666 17.066667c8.533333 34.133333 21.333333 66.133333 40.533334 98.133333l8.533333 14.933333L149.333333 782.933333c-8.533333 8.533333-8.533333 21.333333 0 29.866667L211.2 874.666667c8.533333 8.533333 21.333333 8.533333 29.866667 0l78.933333-81.066667z"
+                    p-id="77266"></path>
+                <path
+                    d="M520.533333 710.4c-106.666667 0-192-85.333333-192-192s85.333333-192 192-192 192 85.333333 192 192c0 104.533333-87.466667 192-192 192z m0-341.333333c-83.2 0-149.333333 66.133333-149.333333 149.333333s66.133333 149.333333 149.333333 149.333333 149.333333-66.133333 149.333334-149.333333-68.266667-149.333333-149.333334-149.333333z"
+                    p-id="77267"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="recommand">
+        <div class="news">
+            <div class="pre"></div>
+            <div class="news-item">
+                <a href="./images/news_1.png">
+                    <img src="./images/news_1.png" alt="">
+                    <span class="news-intro"></span>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="./images/news_2.png">
+                    <img src="./images/news_2.png" alt="">
+                    <span class="news-intro"></span>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="./images/news_3.png">
+                    <img src="./images/news_3.png" alt="">
+                    <span class="news-intro"></span></a>
+            </div>
+            <div class="news-item">
+                <a href="./images/news_4.png">
+                    <img src="./images/news_4.png" alt="">
+                    <span class="news-intro"></span>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="./images/news_5.png">
+                    <img src="./images/news_5.png" alt="">
+                    <span class="news-intro"></span>
+                </a>
+            </div>
+            <div class="next"></div>
+        </div>
+
+        <div class="hot">
+
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div id="novel">小说</div>
+            <div id="image">图片</div>
+            <div id="comics">漫画</div>
+            <div id="music">音乐</div>
+            <div id="video">视频</div>
+            <div id="add">+</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="tools">
+                <div id="sort">排序</div>
+                <div id="filter">筛选</div>
+                <div id="arrange">排列</div>
+            </div>
+            <div class="item-container">
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+                <div class="item">
+                    <div class="image"><a href=""><img src="" alt=""></a></div>
+                    <div class="title"></div>
+                    <div class="intro"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="info">
+            <div class="about">
+                <h3>网站信息</h3>
+                <div>关于我们</div>
+                <div>联系我们</div>
+                <div>隐私策略</div>
+                <div>使用条款</div>
+            </div>
+
+            <div class="help">
+                <h3>帮助</h3>
+                <div>常见问题</div>
+                <div>使用指南</div>
+                <div>反馈与建议</div>
+                <div>举报</div>
+            </div>
+
+            <div class="cooperation">
+                <h3>合作</h3>
+                <div>加入我们</div>
+                <div>合作机构</div>
+                <div>友情链接</div>
+            </div>
+            <div class="UniShare-logo">
+                <a href="index.html"><img src="./images/logo-light.png" /></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <a href="https://www.zhihu.com/people/13-47-79-44" class="copyright">Copyright ©1998 - 2023 聚悦. All
+                Rights Reserved.</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
