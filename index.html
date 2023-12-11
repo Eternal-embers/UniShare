@@ -3,12 +3,14 @@
 
 <head>
     <title>聚悦</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="使用和获取小说、图片、漫画、音乐、视频等娱乐资源的网页平台，可以用于本地使用和通过网页在线资源使用。">
+    <meta name="author" content="劣等生">
     <meta name="keywords" content=“小说,图片,漫画,音乐,视频,娱乐”>
+    <base target="_blank">
     <link rel="stylesheet" type="text/css" href="resource/fontawesome-free-6.4.0-web/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -105,14 +107,14 @@
             </div>
         </div>
         <div class="nav-search">
-            <form target="_blank" method="get" action="./index.html">
+            <form target="_blank" method="get" action="./index.html" onsubmit="return check()">
                 <div class="nav-search-content">
-                    <input class="input" type="text" placeholder="请输入搜索内容" name="keyword" />
+                    <input id="search" type="text" placeholder="请输入搜索内容" name="keyword" />
                     <div class="nav-search-clean">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M8 14.75C11.7279 14.75 14.75 11.7279 14.75 8C14.75 4.27208 11.7279 1.25 8 1.25C4.27208 1.25 1.25 4.27208 1.25 8C1.25 11.7279 4.27208 14.75 8 14.75ZM9.64999 5.64303C9.84525 5.44777 10.1618 5.44777 10.3571 5.64303C10.5524 5.83829 10.5524 6.15487 10.3571 6.35014L8.70718 8.00005L10.3571 9.64997C10.5524 9.84523 10.5524 10.1618 10.3571 10.3571C10.1618 10.5523 9.84525 10.5523 9.64999 10.3571L8.00007 8.70716L6.35016 10.3571C6.15489 10.5523 5.83831 10.5523 5.64305 10.3571C5.44779 10.1618 5.44779 9.84523 5.64305 9.64997L7.29296 8.00005L5.64305 6.35014C5.44779 6.15487 5.44779 5.83829 5.64305 5.64303C5.83831 5.44777 6.15489 5.44777 6.35016 5.64303L8.00007 7.29294L9.64999 5.64303Z"
-                                fill="#7f7f7f"></path>
+                                fill="rgba(0,0,0,0.3)"></path>
                         </svg>
                     </div>
                 </div>
@@ -140,41 +142,108 @@
 
     <div class="recommand">
         <div class="news">
-            <div class="pre"></div>
-            <div class="news-item">
-                <a href="./images/news_1.png">
-                    <img src="./images/news_1.png" alt="">
-                    <span class="news-intro"></span>
-                </a>
+            <div class="carosel">
+                <button class="pre">&#10094;</button>
+                <button class="next">&#10095;</button>
+                <div class="skip-content">
+                    <span class="skip-item"></span>
+                    <span class="skip-item"></span>
+                    <span class="skip-item"></span>
+                    <span class="skip-item"></span>
+                    <span class="skip-item"></span>
+                    <span class="skip-item"></span>
+                </div>
+                <div class="slider">
+                    <div class="slide-item">
+                        <a href="./images/news_1.png">
+                            <img src="./images/news_1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="slide-item">
+                        <a href="./images/news_2.png">
+                            <img src="./images/news_2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="slide-item">
+                        <a href="./images/news_3.png">
+                            <img src="./images/news_3.png" alt="">
+                        </a>
+                    </div>
+                    <div class="slide-item">
+                        <a href="./images/news_4.png">
+                            <img src="./images/news_4.png" alt="">
+                        </a>
+                    </div>
+                    <div class="slide-item">
+                        <a href="./images/news_5.png">
+                            <img src="./images/news_5.png" alt="">
+                        </a>
+                    </div>
+                    <div class="slide-item">
+                        <a href="./images/news_6.png">
+                            <img src="./images/news_6.png" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="news-item">
-                <a href="./images/news_2.png">
-                    <img src="./images/news_2.png" alt="">
-                    <span class="news-intro"></span>
-                </a>
-            </div>
-            <div class="news-item">
-                <a href="./images/news_3.png">
-                    <img src="./images/news_3.png" alt="">
-                    <span class="news-intro"></span></a>
-            </div>
-            <div class="news-item">
-                <a href="./images/news_4.png">
-                    <img src="./images/news_4.png" alt="">
-                    <span class="news-intro"></span>
-                </a>
-            </div>
-            <div class="news-item">
-                <a href="./images/news_5.png">
-                    <img src="./images/news_5.png" alt="">
-                    <span class="news-intro"></span>
-                </a>
-            </div>
-            <div class="next"></div>
         </div>
 
-        <div class="hot">
-
+        <div class="hot-list">
+            <span class="line-left"></span>
+            <div class="head">
+                <svg t="1702207520686" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="11075">
+                    <path
+                        d="M160 608c-19.2 0-32 12.8-32 32v128c0 19.2 12.8 32 32 32h64c19.2 0 32-12.8 32-32v-128c0-19.2-12.8-32-32-32h-64z m0-64h64c54.4 0 96 41.6 96 96v128c0 54.4-41.6 96-96 96h-64c-54.4 0-96-41.6-96-96v-128c0-54.4 41.6-96 96-96z m320-320c-19.2 0-32 12.8-32 32v512c0 19.2 12.8 32 32 32h64c19.2 0 32-12.8 32-32v-512c0-19.2-12.8-32-32-32h-64z m0-64h64c54.4 0 96 41.6 96 96v512c0 54.4-41.6 96-96 96h-64c-54.4 0-96-41.6-96-96v-512c0-54.4 41.6-96 96-96z m320 320c-19.2 0-32 12.8-32 32v256c0 19.2 12.8 32 32 32h64c19.2 0 32-12.8 32-32v-256c0-19.2-12.8-32-32-32h-64z m0-64h64c54.4 0 96 41.6 96 96v256c0 54.4-41.6 96-96 96h-64c-54.4 0-96-41.6-96-96v-256c0-54.4 41.6-96 96-96z"
+                        fill="#374E6B" p-id="11076"></path>
+                </svg>
+                <span>排行榜</span>
+            </div>
+            <span class="line-right"></span>
+            <div class="hot-left">
+                <a class="hot-item" href="">
+                    <span class="rank">1</span>
+                    <span class="name">葬送的芙莉莲</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">2</span>
+                    <span class="name">咒术回战 第二季</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">3</span>
+                    <span class="name">想要成为影之实力者！ 第二季</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">4</span>
+                    <span class="name">间谍过家家 Season 2</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">5</span>
+                    <span class="name">香格里拉·弗陇提亚～屎作猎人向神作发起挑战～</span>
+                </a>
+            </div>
+            <div class="hot-right">
+                <a class="hot-item" href="">
+                    <span class="rank">6</span>
+                    <span class="name">哥布林杀手 第二季</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">7</span>
+                    <span class="name">药屋少女的呢喃</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">8</span>
+                    <span class="name">海贼王</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">9</span>
+                    <span class="name">狩龙人拉格纳</span>
+                </a>
+                <a class="hot-item" href="">
+                    <span class="rank">10</span>
+                    <span class="name">不死不幸</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -192,9 +261,46 @@
     <div class="main">
         <div class="section">
             <div class="tools">
-                <div id="sort">排序</div>
-                <div id="filter">筛选</div>
-                <div id="arrange">排列</div>
+                <div id="sort"><svg t="1701879922875" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="4227">
+                        <path
+                            d="M800.256 741.888l47.616-47.616a31.744 31.744 0 0 1 45.056 45.056l-102.4 102.4a31.744 31.744 0 0 1-54.272-22.528V204.8a32.256 32.256 0 0 1 64 0zM153.6 237.056a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z m0 307.2a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z m0 307.2a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z"
+                            fill="#5A5A68" p-id="4228"></path>
+                    </svg>
+                    <span>排序</span>
+                </div>
+                <div id="filter">
+                    <svg t="1701880220333" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="16913">
+                        <path
+                            d="M511.548421 7.22526C233.375904 7.22526 7.044629 233.556536 7.044629 511.729053s226.331275 504.503793 504.503792 504.503792 504.503793-226.331275 504.503793-504.503792S789.720938 7.22526 511.548421 7.22526z m0 943.438349c-242.046216 0-438.934556-196.88834-438.934556-438.934556s196.88834-438.934556 438.934556-438.934557 438.934556 196.88834 438.934557 438.934557-196.88834 438.934556-438.934557 438.934556z"
+                            p-id="16914"></path>
+                        <path
+                            d="M785.205151 325.678603c-12.824837-12.824837-33.59746-12.824837-46.422297 0L436.405715 628.236373l-152.091727-152.091727c-12.824837-12.824837-33.59746-12.824837-46.422296 0-12.824837 12.824837-12.824837 33.59746 0 46.422297l175.212559 175.21256c1.625684 1.625684 3.251367 3.070736 5.238314 4.154524 5.418945 3.61263 11.741048 5.418945 18.06315 5.418945 8.489681 0 16.79873-3.251367 23.301464-9.573469 0 0 0.180632-0.180632 0.180632-0.361263L785.205151 372.1009c12.824837-12.824837 12.824837-33.59746 0-46.422297z"
+                            p-id="16915"></path>
+                    </svg>
+                    <span>筛选</span>
+                </div>
+                <div id="arrange">
+                    <svg t="1701880051200" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="15088">
+                        <path
+                            d="M897.939 71.662 605.268 71.662c-33.502 0-55.542 27.33-55.542 55.537l0 291.796c0 27.326 22.04 55.537 55.542 55.537l291.791 0c33.502 0 55.537-27.331 55.537-55.537L952.596 126.318C952.596 98.988 930.561 71.662 897.939 71.662zM905.552 407.767c0 7.372-5.733 18.835-18.838 18.835L615.612 426.602c-12.286 0-18.838-10.643-18.838-18.835L596.774 136.663c0-7.369 5.733-18.837 18.838-18.837l271.92 0.818c12.286 0 18.02 10.65 18.02 18.019L905.552 407.767z"
+                            fill="#272636" p-id="15089"></path>
+                        <path d="M897.939 71.662" fill="#272636" p-id="15090"></path>
+                        <path
+                            d="M897.939 551.227 605.268 551.227c-33.502 0-55.542 27.328-55.542 55.537l0 291.794c0 27.331 22.04 55.54 55.542 55.54l291.791 0c33.502 0 55.537-27.33 55.537-55.54L952.596 605.886C952.596 578.555 930.561 551.227 897.939 551.227zM905.552 887.332c0 7.371-5.731 18.838-18.84 18.838L615.614 906.17c-12.288 0-18.84-10.651-18.84-18.838L596.774 616.23c0-7.371 5.731-18.838 18.84-18.838l271.918 0 0 0.816c12.288 0 18.02 10.65 18.02 18.021L905.552 887.332z"
+                            fill="#272636" p-id="15091"></path>
+                        <path
+                            d="M420.438 70.451 127.766 70.451c-33.501 0-55.542 27.331-55.542 55.538l0 291.796c0 27.326 22.041 55.537 55.542 55.537l291.792 0c33.501 0 55.538-27.331 55.538-55.537L475.096 125.108C475.095 97.777 453.059 70.451 420.438 70.451zM428.05 406.557c0 7.372-5.733 18.835-18.837 18.835L138.11 425.392c-12.286 0-18.837-10.643-18.837-18.835L119.273 135.453c0-7.369 5.733-18.837 18.837-18.837l271.92 0.818c12.286 0 18.019 10.65 18.019 18.019L428.049 406.557z"
+                            fill="#272636" p-id="15092"></path>
+                        <path
+                            d="M420.438 550.017 127.766 550.017c-33.501 0-55.542 27.328-55.542 55.537l0 291.794c0 27.33 22.041 55.539 55.542 55.539l291.792 0c33.501 0 55.538-27.33 55.538-55.539L475.096 604.675C475.095 577.345 453.059 550.017 420.438 550.017zM428.05 886.122c0 7.37-5.731 18.837-18.84 18.837L138.113 904.959c-12.288 0-18.84-10.65-18.84-18.837L119.273 615.02c0-7.37 5.731-18.837 18.84-18.837l271.918 0 0 0.816c12.288 0 18.019 10.65 18.019 18.021L428.05 886.122z"
+                            fill="#272636" p-id="15093"></path>
+                        <path d="M897.939 551.227" fill="#272636" p-id="15094"></path>
+                    </svg>
+                    <span>排列</span>
+                </div>
             </div>
             <div class="item-container">
                 <div class="item">
@@ -435,6 +541,8 @@
         </div>
     </div>
 
+    <script src="js/search.js"></script>
+    <script src="js/news.js"></script>
 
 </body>
 
