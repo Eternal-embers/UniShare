@@ -1,0 +1,70 @@
+.footer {
+    background-color: rgba(60, 60, 60, 1);
+    padding: 2vh 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .info {
+    padding: 2vh 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .info .about,
+.help,
+.cooperation,
+.UniShare-logo {
+    width: 20vw;
+}
+
+.footer .info .about div,
+.help div,
+.cooperation div {
+    width: 20vw;
+    margin: 1vh 0;
+}
+
+.info div h3 {
+    font-weight: bold;
+    color: white;
+}
+
+.info div a {
+    text-decoration: none;
+    font-size: 1vw;
+    color: rgba(150, 150, 150, 1);
+}
+
+.info div a:hover {
+    color: rgba(200, 200, 200, 1);
+    text-decoration: underline;
+}
+
+.info .UniShare-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+}
+
+.UniShare-logo img {
+    width: 8vw;
+    object-fit: cover;
+}
+
+.footer .copyright {
+    width: 18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright a {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: rgba(180, 180, 180, 1);
+}

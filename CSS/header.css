@@ -1,0 +1,931 @@
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    z-index: 1;
+}
+
+.header div.logo {
+    width: 100px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(-60px);
+    filter: drop-shadow(0 60px rgba(0, 100, 255, 0.8));
+}
+
+/*  ======================== 导航栏 ========================  */
+.header .nav {
+    position: relative;
+    width: 42vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav input[type="radio"] {
+    display: none;
+}
+
+.nav .nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .nav-content a {
+    width: 7vw;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav .nav-content a label {
+    width: 7vw;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .nav .navcontent label {
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .nav .nav-content label svg {
+    width: 2vw;
+    height: 20px;
+}
+
+.underline {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: block;
+    background-color: rgba(60, 160, 255, 1);
+    width: 5vw;
+    height: 1px;
+    margin-top: 5px;
+    margin-left: 1vw;
+    transition: 0.5s;
+}
+
+.nav input:nth-child(1):checked~.nav-content a:nth-child(1) *,
+.nav input:nth-child(2):checked~.nav-content a:nth-child(2) *,
+.nav input:nth-child(3):checked~.nav-content a:nth-child(3) *,
+.nav input:nth-child(4):checked~.nav-content a:nth-child(4) *,
+.nav input:nth-child(5):checked~.nav-content a:nth-child(5) *,
+.nav input:nth-child(6):checked~.nav-content a:nth-child(6) * {
+    fill: rgba(0, 120, 255, 1);
+    color: rgba(0, 120, 255, 1);
+}
+
+.nav input:nth-child(1):checked~.underline {
+    left: 0%;
+}
+
+.nav input:nth-child(2):checked~.underline {
+    left: 16.7%;
+}
+
+.nav input:nth-child(3):checked~.underline {
+    left: 33.3%;
+}
+
+.nav input:nth-child(4):checked~.underline {
+    left: 50%;
+}
+
+.nav input:nth-child(5):checked~.underline {
+    left: 66.7%;
+}
+
+.nav input:nth-child(6):checked~.underline {
+    left: 83.3%;
+}
+
+/*  ======================== 搜索框 ========================  */
+.header .nav-search {
+    margin: 0 4vw;
+}
+
+.header .nav-search form {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.nav-search .nav-search-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-search .nav-search-content #search {
+    padding: 0.5vh 2vw 0.5vh 0.5vw;
+    width: 18vw;
+    height: 20px;
+    margin-right: 0.5vw;
+    outline: none;
+    border: 0.1px solid rgba(60, 60, 60, 0.3);
+    border-radius: 1vw;
+    font-size: 0.9vw;
+}
+
+#search::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#search:focus {
+    border: 0.1px solid rgba(0, 0, 0, 0.1) !important;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
+    box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
+}
+
+.nav-search .nav-search-content .nav-search-clean {
+    position: absolute;
+    right: 0.9vw;
+    display: none;
+    width: 1vw;
+    height: 20px;
+    cursor: pointer;
+}
+
+.nav-search-clean svg {
+    fill: rgba(0, 0, 0, 0.3);
+}
+
+.nav-search-clean svg:hover {
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+.nav-search .nav-search-content input:not(:placeholder-shown)+.nav-search-clean {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-search form button {
+    background: none;
+    border: none;
+}
+
+.nav-search form button i {
+    width: 1vw;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1vw;
+    transition: 0.1s;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-search form button i:hover {
+    font-size: 1.2vw;
+    color: rgba(0, 200, 180, 0.8);
+}
+
+.login:hover *,
+.history:hover *,
+.mode:hover *,
+.setting:hover * {
+    fill: rgba(0, 100, 255, 1) !important;
+    color: rgba(0, 100, 255, 1) !important;
+    cursor: pointer;
+}
+
+/* ======================== 登录 ======================== */
+#login:checked~.user {
+    display: flex !important;
+}
+
+#login:checked~.login {
+    display: none !important;
+}
+
+.login {
+    width: 2vw;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0.5vw;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.login svg {
+    font-size: 1.2vw;
+    width: 2vw;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+.login .login-text {
+    width: 2vw;
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.login-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn ease-out 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    30% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.login-page .box {
+    position: relative;
+}
+
+.login-page .box .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: move 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        transform: translateY(-40px);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+}
+
+.box .square:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.box .square:nth-child(2) {
+    top: 150px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.box .square:nth-child(3) {
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.box .square:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.box .square:nth-child(5) {
+    top: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.box .login-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-container .login-form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.login-form h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 2px;
+    background: #fff;
+}
+
+.login-form .inputBox {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form .inputBox input,
+.login-form .inputBox .cancel-login {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .inputBox input::placeholder {
+    color: #fff;
+}
+
+.login-form .inputBox input[type="submit"] {
+    background: #fff;
+    color: rgba(100, 100, 100, 1);
+    min-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.login-form .inputBox .cancel-login {
+    background: #fff;
+    color: #666;
+    max-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 36px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.login-form .inputBox input[type="submit"]:hover,
+.login-form .inputBox .cancel-login:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(60, 60, 60, 1);
+}
+
+.login-form .forget {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.login-form .forget a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.login-form .forget a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ======================== 用户 ======================== */
+.header .user {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    margin: 0 0.5vw;
+    overflow: visible;
+    z-index: 1;
+}
+
+.header .user-avatar {
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+    line-height: 2vw;
+    z-index: 1;
+}
+
+.user-avatar .upload-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5vw;
+    height: 1.5vw;
+    line-height: 2vh;
+    display: none;
+    fill: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.user:hover .user-avatar .upload-image {
+    transform: translate(0, 3.5vw);
+    display: block;
+}
+
+.upload-image:hover {
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+.upload-image .image-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5vw;
+    height: 1.5vw;
+    line-height: 2vh;
+    opacity: 0;
+}
+
+.user-avatar #user-image {
+    background-size: cover;
+}
+
+.user-avatar i {
+    position: absolute;
+    right: 0;
+    width: 2vw;
+    height: 2vw;
+    line-height: 2vw;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10vw;
+    transition: all ease-out 0.3s;
+    z-index: 1;
+}
+
+.user .user-card {
+    position: absolute;
+    padding-top: 2.5vw;
+    padding-bottom: 2vh;
+    display: none;
+    z-index: 0;
+}
+
+.user:hover .user-avatar i {
+    width: 5vw;
+    height: 5vw;
+    font-size: 2vw;
+    line-height: 5vw;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.user:hover .user-card,
+.user-card:hover {
+    transform: translateX(-1.5vw);
+    top: 3vw;
+    width: 20vw;
+    height: 45vh;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: 0.1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 1vh;
+}
+
+.user-card .user-name {
+    position: relative;
+    width: 20vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name .name {
+    font-weight: bold;
+}
+
+.user-name .name-edit {
+    position: absolute;
+    width: 10vw;
+    padding: 0 0.5vw;
+    height: 3vh;
+    outline: none;
+    background-color: transparent;
+    border: 0.1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.name-edit::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+    color: rgba(60, 60, 60, 0.5);
+}
+
+.user-name svg {
+    position: absolute;
+    right: 2vw;
+    width: 2vw;
+    height: 2vh;
+    line-height: 2vh;
+    cursor: pointer;
+}
+
+.user-name svg:hover {
+    fill: rgba(0, 100, 255, 1);
+}
+
+
+.user-card .user-lv {
+    width: 20vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-lv .lv {
+    margin-right: 1vw;
+    text-align: start;
+    font-size: 12px;
+    color: rgba(0, 150, 255, 1);
+}
+
+.user-lv .lv-bar {
+    width: 15vw;
+    height: 3px;
+    border-radius: 1vw;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.user-lv .lv-bar .cur-lv {
+    width: 10vw;
+    border-radius: 1vw;
+    background-color: rgba(0, 200, 255, 1);
+    height: 3px;
+}
+
+.lv-tip {
+    width: 20vw;
+    height: 2vh;
+    line-height: 2vh;
+    font-size: 12px;
+    text-align: center;
+    color: rgba(160, 160, 160, 1);
+}
+
+.user .user-card .user-engagement {
+    width: 20vw;
+    height: 5vh;
+    margin: 1vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+}
+
+.user-engagement .follow,
+.user-engagement .fans,
+.user-engagement .release {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.follow .follow-num a,
+.fans .fans-num a,
+.release .release-num a {
+    text-decoration: none;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.follow .follow-num a:hover,
+.fans .fans-num a:hover,
+.release .release-num a:hover {
+    color: rgba(0, 100, 255, 0.8);
+    cursor: pointer;
+}
+
+.follow span:nth-child(2),
+.fans span:nth-child(2),
+.release span:nth-child(2) {
+    font-size: 12px;
+    color: rgba(120, 120, 120, 1);
+}
+
+.user .vip-page {
+    text-decoration: none;
+}
+
+.user .vip {
+    width: 18vw;
+    height: 6vh;
+    margin: 1.5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 1vh;
+    background-color: rgba(255, 225, 160, 0.8);
+    z-index: 1;
+}
+
+.vip svg {
+    width: 4vw;
+    height: 3vh;
+    line-height: 3vh;
+    fill: rgba(0, 100, 255, 0.8);
+}
+
+.vip .vip-remain {
+    width: 14vw;
+    height: 5vh;
+    line-height: 5vh;
+}
+
+.vip .vip-remain .vip-time {
+    width: 6vw;
+    text-align: center;
+    color: rgba(255, 120, 120, 1);
+}
+
+.user .phone,
+.user .email,
+.user .password,
+.user .logout-container {
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone svg,
+.email svg,
+.password svg {
+    width: 4vw;
+    height: 2vh;
+    line-height: 2vh;
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+.phone svg:nth-child(3):hover,
+.email svg:nth-child(3):hover,
+.password svg:nth-child(3):hover {
+    cursor: pointer;
+    fill: rgba(0, 100, 255, 1);
+}
+
+.phone .phone-num,
+.email .email-num,
+.password .password-num {
+    width: 12vw;
+    height: 2vh;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.phone .phone-edit,
+.email .email-edit,
+.password .password-edit {
+    position: absolute;
+    height: 3vh;
+    padding: 0 0.5vw;
+    outline: none;
+    background-color: transparent;
+    border: 0.1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.phone-edit::placeholder,
+.email-edit::placeholder,
+.password-edit::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+    color: rgba(60, 60, 60, 0.5);
+}
+
+.logout {
+    width: 18vw;
+    height: 4vh;
+    margin: 2vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.logout svg {
+    width: 2vw;
+    height: 2vh;
+    line-height: 2vh;
+}
+
+.logout:hover svg,
+.logout:hover .logout-text {
+    fill: rgba(255, 0, 0, 0.6);
+    color: rgba(255, 0, 0, 0.6);
+}
+
+/* 弹窗的样式 */
+.popup {
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vw;
+    padding: 1vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    opacity: 0;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: popupFadeIn 5s ease-out;
+}
+
+/* 弹窗的淡入动画 */
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        bottom: 0;
+    }
+
+    20% {
+        opacity: 1;
+        bottom: 3%;
+    }
+
+    80% {
+        opacity: 1;
+        bottom: 3%;
+    }
+
+    100% {
+        opcity: 0;
+        bottom: 0;
+    }
+}
+
+/* 弹窗的内容样式 */
+.popup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.popup-content p {
+    text-align: center;
+}
+
+.header .history,
+.header .mode,
+.header .setting {
+    width: 2vw;
+    height: 40px;
+    margin: 0 0.5vw;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer !important;
+}
+
+.history i,
+.mode i,
+.setting svg {
+    font-size: 1.2vw;
+    width: 2vw;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+.history .name,
+.mode .name,
+.setting .name {
+    width: 2vw;
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.mode .light,
+.mode .night {
+    width: 0;
+    height: 0;
+    display: none;
+    transition: all 1s;
+}
+
+.mode input[type="radio"] {
+    display: none;
+}
+
+.mode input:nth-child(1):checked~.light,
+.mode input:nth-child(2):checked~.night {
+    width: 2vw;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
