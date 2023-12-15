@@ -6,9 +6,65 @@
 }
 
 .night-mode {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 0.5s ease;
 }
+
+/* ======================== 推荐模块的暗色主题，包括轮播新闻和热榜 ======================== */
+.recommand-dark {}
+
+.recommand .news img {
+    opacity: 0.6;
+}
+
+.recommand-dark .hot-list {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.3) 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.recommand-dark .line-left,
+.recommand-dark .line-right {
+    border-top-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.recommand-dark .hot-list .head * {
+    color: rgba(255, 255, 255, 0.8);
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+.recommand-dark .hot-list .hot-item {
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.recommand-dark .hot-list .hot-item::after,
+.recommand-dark .hot-list .hot-item:before {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.recommand-dark .hot-list .hot-item:hover::before,
+.recommand-dark .hot-list .hot-item:hover::after {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.recommand-dark .hot-list .hot-left .hot-item:nth-child(1) * {
+    color: rgba(255, 160, 125, 1) !important;
+    fill: rgba(255, 160, 125, 1) !important;
+}
+
+.recommand-dark .hot-list .hot-left .hot-item:nth-child(2) * {
+    color: rgba(200, 180, 255, 1) !important;
+    fill: rgba(200, 180, 255, 1) !important;
+}
+
+.recommand-dark .hot-list .hot-left .hot-item:nth-child(3) * {
+    color: rgba(0, 180, 255, 1) !important;
+    fill: rgba(0, 180, 255, 1) !important;
+}
+
 
 .recommand {
     width: 100%;

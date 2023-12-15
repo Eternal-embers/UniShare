@@ -13,7 +13,7 @@
     z-index: 1;
 }
 
-/* ======================== 暗色主题 ======================== */
+/* ======================== 头部的暗色主题 ======================== */
 .header-dark {
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
@@ -97,6 +97,25 @@
     fill: rgba(255, 255, 255, 0.6);
 }
 
+.header-dark .login-page {
+    background-color: rgba(0, 0, 0, 0.1);
+    animation-name: fadeIn-dark;
+}
+
+@keyframes fadeIn-dark {
+    0% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.header-dark .login-page .other-login .other-ways * {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .header-dark .popup {
     position: absolute;
     top: 90vh;
@@ -116,7 +135,7 @@
     height: 100%;
     object-fit: cover;
     transform: translateY(-60px);
-    filter: drop-shadow(0 60px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 60px rgba(0, 0, 0, 0.8));
 }
 
 /*  ======================== 导航栏 ========================  */
@@ -365,8 +384,22 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
-    animation: fadeIn ease-out 0.5s;
+    animation: fadeIn ease-out 0.8s;
     z-index: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    30% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 }
 
 .cancel-login {
@@ -390,20 +423,6 @@
 
 .cancel-login:hover svg {
     fill: rgba(255, 255, 255, 0.6);
-}
-
-@keyframes fadeIn {
-    0% {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    30% {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    100% {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
 }
 
 .login-page .box {
