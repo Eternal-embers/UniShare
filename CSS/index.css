@@ -5,6 +5,11 @@
     color: black;
 }
 
+.night-mode {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.5s ease;
+}
+
 .recommand {
     width: 100%;
     display: flex;

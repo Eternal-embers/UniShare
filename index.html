@@ -20,6 +20,40 @@
 <script src="js/news.js" defer></script>
 <script src="js/user.js" defer></script>
 <script src="js/login.js" defer></script>
+<script src="js/mode.js" defet></script>
+
+<!--允许复制的脚本-->
+<script id="allow-copy_script">(function agent() {
+        let unlock = false
+        document.addEventListener('allow_copy', (event) => {
+            unlock = event.detail.unlock
+        })
+
+        const copyEvents = [
+            'copy',
+            'cut',
+            'contextmenu',
+            'selectstart',
+            'mousedown',
+            'mouseup',
+            'mousemove',
+            'keydown',
+            'keypress',
+            'keyup',
+        ]
+        const rejectOtherHandlers = (e) => {
+            if (unlock) {
+                e.stopPropagation()
+                if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+            }
+        }
+        copyEvents.forEach((evt) => {
+            document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+                capture: true,
+            })
+        })
+    })()
+</script>
 
 <body>
     <div class="header">
@@ -159,23 +193,408 @@
                 <div class="square" style="--i:2"></div>
                 <div class="square" style="--i:3"></div>
                 <div class="square" style="--i:4"></div>
-                <div class="login-container">
+                <div class="cancel-login" onclick="cancelLogin()">
+                    <svg t="1702567913194" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="16004" width="20px" height="20px"
+                        fill="rgba(255,255,255,0.3)">
+                        <path
+                            d="M851.416 217.84l-45.256-45.248L512 466.744l-294.152-294.16-45.256 45.256L466.744 512l-294.152 294.16 45.248 45.256L512 557.256l294.16 294.16 45.256-45.256L557.256 512z"
+                            p-id="16005"></path>
+                    </svg>
+                </div>
+                <div class="login-container" id="password-login">
                     <div class="login-form">
                         <h2>密码登录</h2>
+                        <div class="switch-login" onclick="switch_login()">
+                            <svg t="1702552628354" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="9287" width="20" height="20">
+                                <path
+                                    d="M900.4 424.87c19.47 0 37.03-11.73 44.49-29.73 7.46-17.98 3.33-38.7-10.43-52.48L713.97 122.19c-7.3-7.3-19.12-7.3-26.42 0l-41.69 41.69c-7.3 7.3-7.3 19.13 0 26.42l138.28 138.27H86.32c-10.19 0-18.46 8.26-18.46 18.46v59.39c0 10.19 8.26 18.46 18.46 18.46H900.4zM937.65 598.72H123.8c-19.47 0-37.03 11.73-44.49 29.73-7.46 17.98-3.33 38.7 10.43 52.48l220.49 220.48c7.3 7.3 19.12 7.3 26.42 0l41.69-41.69c7.3-7.3 7.3-19.13 0-26.42L240.06 695.02h697.59c10.32 0 18.68-8.37 18.68-18.68v-58.93c0-10.32-8.36-18.69-18.68-18.69z"
+                                    p-id="9288"></path>
+                            </svg>
+                        </div>
+                        <div class="tip">切换到短信登录</div>
                         <form onsubmit="return false">
                             <div class=" inputBox">
-                                <input type="text" placeholder="用户名" title="用户名">
+                                <input type="text" name="password-login" placeholder="账号" title="账号" autocomplete="on"
+                                    autofocus required="required">
                             </div>
                             <div class="inputBox">
-                                <input type="password" placeholder="密码" title="密码">
+                                <input type="password" name="password-login" placeholder="密码" title="密码"
+                                    autocomplete="on" required="required">
                             </div>
                             <div class="inputBox">
                                 <input type="submit" value="登录" title="登录" onclick="login()">
-                                <div class="cancel-login" onclick="cancelLogin()">退出</div>
                             </div>
                             <p class="forget">忘记密码? <a href="#">点击这里找回密码</a></p>
-                            <p class="forget">没有注册账号? <a href="#">注册</a></p>
+                            <p class="forget">没有注册账号? <a href="">注册</a></p>
                         </form>
+                    </div>
+                    <div class="other-login">
+                        <div class="title">
+                            <div class="line"></div>
+                            <div class="title-p"> 其他方式登录</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="other-ways">
+                            <div class="qq-login">
+                                <i class="fa-brands fa-qq"></i>
+                            </div>
+                            <div class="wechat-login">
+                                <i class="fa-brands fa-weixin"></i>
+                            </div>
+                            <div class="github-login">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="steam-login">
+                                <i class="fa-brands fa-steam"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-container" id="authcode-login">
+                    <div class="login-form">
+                        <h2>短信登录</h2>
+                        <div class="switch-login" onclick="switch_login()">
+                            <svg t="1702552628354" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="9287" width="20" height="20">
+                                <path
+                                    d="M900.4 424.87c19.47 0 37.03-11.73 44.49-29.73 7.46-17.98 3.33-38.7-10.43-52.48L713.97 122.19c-7.3-7.3-19.12-7.3-26.42 0l-41.69 41.69c-7.3 7.3-7.3 19.13 0 26.42l138.28 138.27H86.32c-10.19 0-18.46 8.26-18.46 18.46v59.39c0 10.19 8.26 18.46 18.46 18.46H900.4zM937.65 598.72H123.8c-19.47 0-37.03 11.73-44.49 29.73-7.46 17.98-3.33 38.7 10.43 52.48l220.49 220.48c7.3 7.3 19.12 7.3 26.42 0l41.69-41.69c7.3-7.3 7.3-19.13 0-26.42L240.06 695.02h697.59c10.32 0 18.68-8.37 18.68-18.68v-58.93c0-10.32-8.36-18.69-18.68-18.69z"
+                                    p-id="9288"></path>
+                            </svg>
+                        </div>
+                        <div class="tip">切换到密码登录</div>
+                        <form onsubmit="return false">
+                            <div class="inputBox">
+                                <div class="field-country-code">
+                                    <div class="country-code">+86</div>
+                                    <div class="country-code-list" data-area="listPanel">
+                                        <ul>
+                                            <li class="country-code-list-title">热门地区</li>
+                                            <li class="country-code-list-dec" data-area-acode="86"
+                                                data-area-name="中国大陆">
+                                                <span data-area-acode="86" data-area-name="中国大陆">中国大陆</span>
+                                                <span data-area-acode="86" data-area-name="中国大陆">+86</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="886"
+                                                data-area-name="中国台湾">
+                                                <span data-area-acode="886" data-area-name="中国台湾">中国台湾</span>
+                                                <span data-area-acode="886" data-area-name="中国台湾">+886</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">M</li>
+                                            <li class="country-code-list-dec" data-area-acode="1"
+                                                data-area-name="美国/加拿大">
+                                                <span data-area-acode="1" data-area-name="美国/加拿大">美国/加拿大</span>
+                                                <span data-area-acode="1" data-area-name="美国/加拿大">+1</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="60"
+                                                data-area-name="马来西亚">
+                                                <span data-area-acode="60" data-area-name="马来西亚">马来西亚</span>
+                                                <span data-area-acode="60" data-area-name="马来西亚">+60</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="95" data-area-name="缅甸">
+                                                <span data-area-acode="95" data-area-name="缅甸">缅甸</span>
+                                                <span data-area-acode="95" data-area-name="缅甸">+95</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="230"
+                                                data-area-name="毛里求斯">
+                                                <span data-area-acode="230" data-area-name="毛里求斯">毛里求斯</span>
+                                                <span data-area-acode="230" data-area-name="毛里求斯">+230</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">T</li>
+                                            <li class="country-code-list-dec" data-area-acode="886"
+                                                data-area-name="中国台湾">
+                                                <span data-area-acode="886" data-area-name="中国台湾">中国台湾</span>
+                                                <span data-area-acode="886" data-area-name="中国台湾">+886</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="66" data-area-name="泰国">
+                                                <span data-area-acode="66" data-area-name="泰国">泰国</span>
+                                                <span data-area-acode="66" data-area-name="泰国">+66</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">X</li>
+                                            <li class="country-code-list-dec" data-area-acode="852"
+                                                data-area-name="中国香港">
+                                                <span data-area-acode="852" data-area-name="中国香港">中国香港</span>
+                                                <span data-area-acode="852" data-area-name="中国香港">+852</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="65" data-area-name="新加坡">
+                                                <span data-area-acode="65" data-area-name="新加坡">新加坡</span>
+                                                <span data-area-acode="65" data-area-name="新加坡">+65</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="64" data-area-name="新西兰">
+                                                <span data-area-acode="64" data-area-name="新西兰">新西兰</span>
+                                                <span data-area-acode="64" data-area-name="新西兰">+64</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="34" data-area-name="西班牙">
+                                                <span data-area-acode="34" data-area-name="西班牙">西班牙</span>
+                                                <span data-area-acode="34" data-area-name="西班牙">+34</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="36" data-area-name="匈牙利">
+                                                <span data-area-acode="36" data-area-name="匈牙利">匈牙利</span>
+                                                <span data-area-acode="36" data-area-name="匈牙利">+36</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">Z</li>
+                                            <li class="country-code-list-dec" data-area-acode="86"
+                                                data-area-name="中国大陆">
+                                                <span data-area-acode="86" data-area-name="中国大陆">中国大陆</span>
+                                                <span data-area-acode="86" data-area-name="中国大陆">+86</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="56" data-area-name="智利">
+                                                <span data-area-acode="56" data-area-name="智利">智利</span>
+                                                <span data-area-acode="56" data-area-name="智利">+56</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">R</li>
+                                            <li class="country-code-list-dec" data-area-acode="81" data-area-name="日本">
+                                                <span data-area-acode="81" data-area-name="日本">日本</span>
+                                                <span data-area-acode="81" data-area-name="日本">+81</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="46" data-area-name="瑞典">
+                                                <span data-area-acode="46" data-area-name="瑞典">瑞典</span>
+                                                <span data-area-acode="46" data-area-name="瑞典">+46</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="41" data-area-name="瑞士">
+                                                <span data-area-acode="41" data-area-name="瑞士">瑞士</span>
+                                                <span data-area-acode="41" data-area-name="瑞士">+41</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">H</li>
+                                            <li class="country-code-list-dec" data-area-acode="82" data-area-name="韩国">
+                                                <span data-area-acode="82" data-area-name="韩国">韩国</span>
+                                                <span data-area-acode="82" data-area-name="韩国">+82</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="31" data-area-name="荷兰">
+                                                <span data-area-acode="31" data-area-name="荷兰">荷兰</span>
+                                                <span data-area-acode="31" data-area-name="荷兰">+31</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">Y</li>
+                                            <li class="country-code-list-dec" data-area-acode="44" data-area-name="英国">
+                                                <span data-area-acode="44" data-area-name="英国">英国</span>
+                                                <span data-area-acode="44" data-area-name="英国">+44</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="84" data-area-name="越南">
+                                                <span data-area-acode="84" data-area-name="越南">越南</span>
+                                                <span data-area-acode="84" data-area-name="越南">+84</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="62"
+                                                data-area-name="印度尼西亚">
+                                                <span data-area-acode="62" data-area-name="印度尼西亚">印度尼西亚</span>
+                                                <span data-area-acode="62" data-area-name="印度尼西亚">+62</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="91" data-area-name="印度">
+                                                <span data-area-acode="91" data-area-name="印度">印度</span>
+                                                <span data-area-acode="91" data-area-name="印度">+91</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="39" data-area-name="意大利">
+                                                <span data-area-acode="39" data-area-name="意大利">意大利</span>
+                                                <span data-area-acode="39" data-area-name="意大利">+39</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">A</li>
+                                            <li class="country-code-list-dec" data-area-acode="853"
+                                                data-area-name="中国澳门">
+                                                <span data-area-acode="853" data-area-name="中国澳门">中国澳门</span>
+                                                <span data-area-acode="853" data-area-name="中国澳门">+853</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="61"
+                                                data-area-name="澳大利亚">
+                                                <span data-area-acode="61" data-area-name="澳大利亚">澳大利亚</span>
+                                                <span data-area-acode="61" data-area-name="澳大利亚">+61</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="54" data-area-name="阿根廷">
+                                                <span data-area-acode="54" data-area-name="阿根廷">阿根廷</span>
+                                                <span data-area-acode="54" data-area-name="阿根廷">+54</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="43" data-area-name="奥地利">
+                                                <span data-area-acode="43" data-area-name="奥地利">奥地利</span>
+                                                <span data-area-acode="43" data-area-name="奥地利">+43</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="971"
+                                                data-area-name="阿联酋"> <span data-area-acode="971"
+                                                    data-area-name="阿联酋">阿联酋</span>
+                                                <span data-area-acode="971" data-area-name="阿联酋">+971</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">F</li>
+                                            <li class="country-code-list-dec" data-area-acode="63" data-area-name="菲律宾">
+                                                <span data-area-acode="63" data-area-name="菲律宾">菲律宾</span>
+                                                <span data-area-acode="63" data-area-name="菲律宾">+63</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="33" data-area-name="法国">
+                                                <span data-area-acode="33" data-area-name="法国">法国</span>
+                                                <span data-area-acode="33" data-area-name="法国">+33</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="358" data-area-name="芬兰">
+                                                <span data-area-acode="358" data-area-name="芬兰">芬兰</span>
+                                                <span data-area-acode="358" data-area-name="芬兰">+358</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="679" data-area-name="斐济">
+                                                <span data-area-acode="679" data-area-name="斐济">斐济</span>
+                                                <span data-area-acode="679" data-area-name="斐济">+679</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">J</li>
+                                            <li class="country-code-list-dec" data-area-acode="855"
+                                                data-area-name="柬埔寨"> <span data-area-acode="855"
+                                                    data-area-name="柬埔寨">柬埔寨</span>
+                                                <span data-area-acode="855" data-area-name="柬埔寨">+855</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="420" data-area-name="捷克">
+                                                <span data-area-acode="420" data-area-name="捷克">捷克</span>
+                                                <span data-area-acode="420" data-area-name="捷克">+420</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">D</li>
+                                            <li class="country-code-list-dec" data-area-acode="49" data-area-name="德国">
+                                                <span data-area-acode="49" data-area-name="德国">德国</span>
+                                                <span data-area-acode="49" data-area-name="德国">+49</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">L</li>
+                                            <li class="country-code-list-dec" data-area-acode="856" data-area-name="老挝">
+                                                <span data-area-acode="856" data-area-name="老挝">老挝</span>
+                                                <span data-area-acode="856" data-area-name="老挝">+856</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="40"
+                                                data-area-name="罗马尼亚">
+                                                <span data-area-acode="40" data-area-name="罗马尼亚">罗马尼亚</span>
+                                                <span data-area-acode="40" data-area-name="罗马尼亚">+40</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">S</li>
+                                            <li class="country-code-list-dec" data-area-acode="966"
+                                                data-area-name="沙特阿拉伯">
+                                                <span data-area-acode="966" data-area-name="沙特阿拉伯">沙特阿拉伯</span>
+                                                <span data-area-acode="966" data-area-name="沙特阿拉伯">+966</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="597"
+                                                data-area-name="苏里南"> <span data-area-acode="597"
+                                                    data-area-name="苏里南">苏里南</span>
+                                                <span data-area-acode="597" data-area-name="苏里南">+597</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">E</li>
+                                            <li class="country-code-list-dec" data-area-acode="7" data-area-name="俄罗斯">
+                                                <span data-area-acode="7" data-area-name="俄罗斯">俄罗斯</span>
+                                                <span data-area-acode="7" data-area-name="俄罗斯">+7</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">N</li>
+                                            <li class="country-code-list-dec" data-area-acode="27" data-area-name="南非">
+                                                <span data-area-acode="27" data-area-name="南非">南非</span>
+                                                <span data-area-acode="27" data-area-name="南非">+27</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">B</li>
+                                            <li class="country-code-list-dec" data-area-acode="55" data-area-name="巴西">
+                                                <span data-area-acode="55" data-area-name="巴西">巴西</span>
+                                                <span data-area-acode="55" data-area-name="巴西">+55</span>
+                                            </li>
+                                            <li class="country-code-list-dec" data-area-acode="32" data-area-name="比利时">
+                                                <span data-area-acode="32" data-area-name="比利时">比利时</span>
+                                                <span data-area-acode="32" data-area-name="比利时">+32</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">G</li>
+                                            <li class="country-code-list-dec" data-area-acode="506"
+                                                data-area-name="哥斯达黎加">
+                                                <span data-area-acode="506" data-area-name="哥斯达黎加">哥斯达黎加</span>
+                                                <span data-area-acode="506" data-area-name="哥斯达黎加">+506</span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="country-code-list-title">P</li>
+                                            <li class="country-code-list-dec" data-area-acode="351"
+                                                data-area-name="葡萄牙"> <span data-area-acode="351"
+                                                    data-area-name="葡萄牙">葡萄牙</span>
+                                                <span data-area-acode="351" data-area-name="葡萄牙">+351</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="radio" name="country-code" id="up-icon" style="display: none;">
+                                    <input type="radio" name="country-code" id="down-icon" style="display: none;"
+                                        checked>
+                                    <div class="icon">
+                                        <label for="up-icon" onclick="open_country_list()">
+                                            <svg t="1702539489584" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="61434" width="16" height="16"
+                                                fill="#fff">
+                                                <path
+                                                    d="M933.24753575 300.02524075L511.97978197 721.26772137 90.73729887 300.02524075Z"
+                                                    p-id="61435"></path>
+                                            </svg>
+                                        </label>
+                                        <label for="down-icon" onclick="close_country_list()">
+                                            <svg t="1702537695600" viewBox="0 0 2048 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="41435" width="16" height="16"
+                                                fill="#fff">
+                                                <path d="M1024 0l1024 1024H0z" p-id="41436"></path>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <svg t="1702535666097" viewBox="0 0 1024 1024" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" p-id="6170" width="20" height="40"
+                                        fill="rgba(255,255,255,0.8)">
+                                        <path d="M496.484848 0h23.272728v1024H496.484848V0z" p-id="6171"></path>
+                                    </svg>
+                                </div>
+                                <input type="tel" name="tel-login" placeholder="手机号" title="手机号" autocomplete="on"
+                                    minlength="11" autofocus required="required">
+                            </div>
+                            <div class="inputBox">
+                                <input type="password" name="password-login" placeholder="验证码" title="验证码"
+                                    autocomplete="on" required="required">
+                            </div>
+                            <div class="inputBox">
+                                <input type="submit" value="登录/注册" title="登录" onclick="login()">
+                            </div>
+                            <p class="forget">无法用手机号注册？
+                                <a href="">其他注册方式</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="other-login">
+                        <div class="title">
+                            <div class="line"></div>
+                            <div class="title-p"> 其他方式登录</div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="other-ways">
+                            <div class="qq-login">
+                                <i class="fa-brands fa-qq"></i>
+                            </div>
+                            <div class="wechat-login">
+                                <i class="fa-brands fa-weixin"></i>
+                            </div>
+                            <div class="github-login">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="steam-login">
+                                <i class="fa-brands fa-steam"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -319,7 +738,7 @@
                 <div class="logout-container">
                     <div class="logout">
                         <svg t="1702386145735" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" p-id="56231" width="200" height="200">
+                            xmlns="http://www.w3.org/2000/svg" p-id="56231">
                             <path
                                 d="M960.512 539.712l-144.768 144.832-48.256-48.256 60.224-60.288H512V512h325.76l-70.272-70.272 48.256-48.256 144.768 144.768-0.704 0.768 0.704 0.704zM704 192a64 64 0 0 0-64-64H192a64 64 0 0 0-64 64v640a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64v-64h64v64a128 128 0 0 1-128 128H192a128 128 0 0 1-128-128V192a128 128 0 0 1 128-128h448a128 128 0 0 1 128 128v128h-64V192z"
                                 p-id="56232"></path>
@@ -349,10 +768,10 @@
         <div class="mode">
             <input type="radio" name="mode" id="light" checked>
             <input type="radio" name="mode" id="night">
-            <label class="light" for="night">
+            <label class="light" for="night" onclick="night_mode()">
                 <i class="fa-regular fa-sun"></i>
             </label>
-            <label class="night" for="light">
+            <label class="night" for="light" onclick="light_mode()">
                 <i class="fa-regular fa-moon"></i>
             </label>
             <div class="name">模式</div>
@@ -809,9 +1228,8 @@
 
         if (scrollDistance >= 0.5 * window.innerHeight) { // 当页面滚动的距离总共下降了50vh时
             header.style.position = 'fixed'; // 将.header的position修改为fixed
-            header.style.border = '0.1px solid rgba(0, 0, 0, 0.1)';//添加底部边框
-            header.style.boxShadow = '0 10px 10px -10px rgba(0, 0, 0, 0.3)';//设置底部阴影
-
+            header.style.borderBottom = '0.1px solid rgba(0, 0, 0, 0.1)';//添加底部边框
+            header.style.boxShadow = '0 15px 15px -15px rgba(0, 0, 0, 0.3)';//设置底部阴影
         } else {
             header.style.position = 'relative'; // 当页面向下滚动的总距离小于50vh时将.header的position修改为relative
             header.style.border = 'none';//添加底部边框

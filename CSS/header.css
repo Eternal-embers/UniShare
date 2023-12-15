@@ -13,6 +13,96 @@
     z-index: 1;
 }
 
+/* ======================== 暗色主题 ======================== */
+.header-dark {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: background-color ease 0.5s;
+}
+
+.header-dark .logo img {
+    filter: drop-shadow(0 60px rgba(255, 255, 255, 0.5)) !important;
+}
+
+.header-dark .nav * {
+    color: rgba(255, 255, 255, 0.5);
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.header-dark .nav-search #search {
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color ease 0.5s;
+}
+
+.header-dark .nav-search #search:focus {
+    border-color: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7);
+    -moz-box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7);
+}
+
+.header-dark .nav-search button i {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.header-dark .nav-search button:hover i {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.header-dark .login *,
+.header-dark .history *,
+.header-dark .mode *,
+.header-dark .setting * {
+    fill: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.header-dark .user .user-avatar * {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    fill: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.header-dark .user:hover .user-card,
+.header-dark .user-card:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+}
+
+.header-dark .user .user-engagement * {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.header-dark .user input {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.1);
+}
+
+.header-dark .user-card .user-name *,
+.header-dark .user-card .phone *,
+.header-dark .user-card .email *,
+.header-dark .user-card .password * {
+    color: rgba(255, 255, 255, 0.6);
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+.header-dark .user-card .logout:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-dark .user-card .logout svg,
+.header-dark .user-card .logout .logout-text {
+    color: rgba(255, 255, 255, 0.6);
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+.header-dark .popup {
+    position: absolute;
+    top: 90vh;
+    height: 20px;
+}
+
 .header div.logo {
     width: 100px;
     height: 60px;
@@ -26,7 +116,7 @@
     height: 100%;
     object-fit: cover;
     transform: translateY(-60px);
-    filter: drop-shadow(0 60px rgba(0, 100, 255, 0.8));
+    filter: drop-shadow(0 60px rgba(0, 0, 0, 0.6));
 }
 
 /*  ======================== 导航栏 ========================  */
@@ -84,7 +174,7 @@
     top: 20px;
     left: 0;
     display: block;
-    background-color: rgba(60, 160, 255, 1);
+    background-color: rgba(0, 120, 255, 1);
     width: 5vw;
     height: 1px;
     margin-top: 5px;
@@ -126,6 +216,11 @@
     left: 83.3%;
 }
 
+.header .nav label:hover * {
+    fill: rgba(0, 120, 255, 1);
+    color: rgba(0, 120, 255, 1);
+}
+
 /*  ======================== 搜索框 ========================  */
 .header .nav-search {
     margin: 0 4vw;
@@ -162,10 +257,10 @@
 }
 
 #search:focus {
-    border: 0.1px solid rgba(0, 0, 0, 0.1) !important;
-    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
-    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
-    box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8) !important;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8);
+    box-shadow: 0px 0px 4px 1px rgba(0, 200, 180, 0.8);
 }
 
 .nav-search .nav-search-content .nav-search-clean {
@@ -194,6 +289,7 @@
 .nav-search form button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .nav-search form button i {
@@ -205,7 +301,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.nav-search form button i:hover {
+.nav-search form button:hover i {
     font-size: 1.2vw;
     color: rgba(0, 200, 180, 0.8);
 }
@@ -270,6 +366,30 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     animation: fadeIn ease-out 0.5s;
+    z-index: 1;
+}
+
+.cancel-login {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-top-right-radius: 10px;
+    z-index: 1;
+}
+
+.cancel-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cancel-login:hover svg {
+    fill: rgba(255, 255, 255, 0.6);
 }
 
 @keyframes fadeIn {
@@ -288,6 +408,10 @@
 
 .login-page .box {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .login-page .box .square {
@@ -316,15 +440,15 @@
 }
 
 .box .square:nth-child(1) {
-    top: -50px;
-    right: -60px;
+    bottom: -60px;
+    right: -80px;
     width: 100px;
     height: 100px;
     z-index: 2;
 }
 
 .box .square:nth-child(2) {
-    top: 150px;
+    bottom: 150px;
     left: -100px;
     width: 120px;
     height: 120px;
@@ -332,23 +456,23 @@
 }
 
 .box .square:nth-child(3) {
-    bottom: 50px;
-    right: -60px;
+    top: 80px;
+    right: -50px;
     width: 80px;
     height: 80px;
     z-index: 2;
 }
 
 .box .square:nth-child(4) {
-    bottom: -80px;
+    top: -80px;
     left: 100px;
     width: 50px;
     height: 50px;
 }
 
 .box .square:nth-child(5) {
-    top: -80px;
-    left: 100px;
+    bottom: -80px;
+    left: 150px;
     width: 50px;
     height: 50px;
 }
@@ -364,6 +488,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -373,8 +498,6 @@
 
 .login-container .login-form {
     position: relative;
-    width: 100%;
-    height: 100%;
     padding: 40px;
     display: flex;
     justify-content: center;
@@ -387,7 +510,7 @@
     color: #fff;
     font-size: 24px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     margin-bottom: 40px;
 }
 
@@ -401,6 +524,61 @@
     background: #fff;
 }
 
+.login-form .tip {
+    position: absolute;
+    top: 0;
+    transform: translate(100px, 100px);
+    display: none;
+    padding: 5px;
+    border: 0.1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    animation: tipFadeIn ease-out 0.5s;
+}
+
+.tip:hover {
+    display: block;
+}
+
+.login-form .tip:before {
+    content: '';
+    position: absolute;
+    transform: translate(20px, -30px);
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid rgba(255, 255, 255, 0.05);
+    border-left: 4px dashed transparent;
+    border-right: 10px dashed transparent;
+}
+
+@keyframes tipFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-form .switch-login {
+    position: absolute;
+    top: 0;
+    transform: translate(60px, 60px);
+    fill: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.login-form .switch-login:hover {
+    fill: rgba(255, 255, 255, 0.3);
+}
+
+.login-form .switch-login:hover~.tip {
+    display: block;
+}
+
 .login-form .inputBox {
     width: 100%;
     margin-top: 30px;
@@ -409,14 +587,12 @@
     align-items: center;
 }
 
-.login-form .inputBox input,
-.login-form .inputBox .cancel-login {
+.login-form .inputBox input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
     outline: none;
-    padding: 10px 20px;
-    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 20px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -426,6 +602,10 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+#password-login .inputBox input {
+    min-width: 250px;
+}
+
 .login-form .inputBox input::placeholder {
     color: #fff;
 }
@@ -433,25 +613,12 @@
 .login-form .inputBox input[type="submit"] {
     background: #fff;
     color: rgba(100, 100, 100, 1);
-    min-width: 100px;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
-.login-form .inputBox .cancel-login {
-    background: #fff;
-    color: #666;
-    max-width: 100px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    margin-left: 36px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.login-form .inputBox input[type="submit"]:hover,
-.login-form .inputBox .cancel-login:hover {
+.login-form .inputBox input[type="submit"]:hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: rgba(60, 60, 60, 1);
 }
@@ -462,12 +629,165 @@
 }
 
 .login-form .forget a {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
     color: #fff;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .login-form .forget a:hover {
     color: rgba(255, 255, 255, 0.6);
+}
+
+.login-form .other-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-login .title {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title .title-p {
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.title .line {
+    width: 90px;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.other-login .other-ways {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.other-ways div:hover i {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#authcode-login {
+    display: none;
+}
+
+.login-form .field-country-code {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50px;
+}
+
+.field-country-code .country-code {
+    font-size: 16px;
+    color: #fff;
+}
+
+.field-country-code .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon label {
+    line-height: 16px;
+    display: none;
+}
+
+.icon label:hover svg {
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+.field-country-code input:nth-child(3):checked~.icon label:nth-child(2),
+.field-country-code input:nth-child(4):checked~.icon label:nth-child(1) {
+    display: block;
+}
+
+/* 国家区域的列表 */
+.country-code-list {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 200px;
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    animation: listFadeOut ease-in-out 0.8s;
+}
+
+@keyframes listFadeOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.country-code-list:hover {
+    display: block;
+}
+
+.country-code-list ul {
+    list-style: none;
+}
+
+.country-code-list-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.country-code-list-dec {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.country-code-list-dec:hover * {
+    color: rgba(0, 180, 100, 1);
+    font-weight: bold;
+}
+
+.country-code-list-dec span {
+    display: inline-block;
+    padding: 5px 0;
+    width: 50%;
+}
+
+/* 国家名左对齐 */
+.country-code-list-dec span:first-child {
+    text-align: left;
+}
+
+/* 国家代码右对齐 */
+.country-code-list-dec span:last-child {
+    text-align: right;
+}
+
+.login-form .inputBox input[type="tel"] {
+    padding: 8px 20px 8px 80px;
 }
 
 /* ======================== 用户 ======================== */
@@ -819,9 +1139,9 @@
 }
 
 /* 弹窗的样式 */
-.popup {
+.header .popup {
     position: fixed;
-    bottom: 3%;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 15vw;
@@ -875,6 +1195,7 @@
 .header .history,
 .header .mode,
 .header .setting {
+    position: relative;
     width: 2vw;
     height: 40px;
     margin: 0 0.5vw;

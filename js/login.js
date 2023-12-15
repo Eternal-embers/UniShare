@@ -12,6 +12,10 @@ function login() {
     var username = document.querySelector('.login-page input[type="text"]').value;
     var password = document.querySelector('.login-page input[type="password"]').value;
 
+    login_page.style.display = "none";//隐藏登陆界面
+    login_ico.style.display = 'none';//隐藏登录图标
+    user.style.display = "flex";//显示用户图标
+
     // 弹窗提示
     // 获取弹窗元素
     let popup = document.getElementById('login-popup');
@@ -21,10 +25,6 @@ function login() {
     setTimeout(function () {
         popup.style.display = 'none';
     }, 6000);
-
-    login_page.style.display = "none";//隐藏登陆界面
-    login_ico.style.display = 'none';//隐藏登录图标
-    user.style.display = "flex";//显示用户图标
 }
 
 function cancelLogin() {
@@ -45,3 +45,21 @@ function logout() {
         popup.style.display = 'none';
     }, 6000);
 }
+
+/* 切换到短信登录页面 */
+var cur_login = 0;//0 表示密码登录，1 表示短信登录
+var password_login = document.getElementById('password-login');
+var authcode_login = document.getElementById('authcode-login');
+function switch_login() {
+    if (cur_login == 0) {
+        password_login.style.display = 'none';
+        authcode_login.style.display = 'flex';
+        cur_login = 1;
+    }
+    else {
+        password_login.style.display = 'flex';
+        authcode_login.style.display = 'none';
+        cur_login = 0;
+    }
+}
+
