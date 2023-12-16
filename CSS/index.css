@@ -5,6 +5,10 @@
     color: black;
 }
 
+body {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 .night-mode {
     background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 0.5s ease;
@@ -13,7 +17,7 @@
 /* ======================== 推荐模块的暗色主题，包括轮播新闻和热榜 ======================== */
 .recommand-dark {}
 
-.recommand .news img {
+.recommand-dark .news img {
     opacity: 0.6;
 }
 
@@ -63,6 +67,11 @@
 .recommand-dark .hot-list .hot-left .hot-item:nth-child(3) * {
     color: rgba(0, 180, 255, 1) !important;
     fill: rgba(0, 180, 255, 1) !important;
+}
+
+.recommand-dark .hot-list .hot-item * {
+    color: rgba(255, 255, 255, 0.5);
+    fill: rgba(255, 255, 255, 0.5);
 }
 
 

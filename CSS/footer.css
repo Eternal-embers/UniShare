@@ -1,16 +1,41 @@
 .footer {
-    background-color: rgba(60, 60, 60, 1);
-    padding: 2vh 1vw;
+    background-color: #f0f0f0;
+    padding: 2vh 1vw 3vh 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+/* ======================== footer的暗色主题 ======================== */
+.footer-dark {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-dark .info *,
+.footer-dark .copyright {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-dark .info .about a:hover,
+.footer-dark .info .help a:hover,
+.footer-dark .info .cooperation a:hover {
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.footer-dark .info .UniShare-logo img {
+    filter: drop-shadow(0 10vw rgba(255, 255, 255, 0.5));
+}
+
 .footer .info {
     padding: 2vh 0;
     display: flex;
     justify-content: center;
+}
+
+.footer * {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .footer .info .about,
@@ -29,17 +54,14 @@
 
 .info div h3 {
     font-weight: bold;
-    color: white;
 }
 
 .info div a {
     text-decoration: none;
     font-size: 1vw;
-    color: rgba(150, 150, 150, 1);
 }
 
 .info div a:hover {
-    color: rgba(200, 200, 200, 1);
     text-decoration: underline;
 }
 
@@ -47,16 +69,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16vw;
+    width: 10vw;
+    overflow: hidden;
 }
 
 .UniShare-logo img {
-    width: 8vw;
+    width: 100%;
     object-fit: cover;
+    transform: translateY(-10vw);
+    filter: drop-shadow(0 10vw rgba(0, 160, 255, 1));
 }
 
 .footer .copyright {
-    width: 18vw;
+    width: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,5 +91,5 @@
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px;
-    color: rgba(180, 180, 180, 1);
+    letter-spacing: 0.5px;
 }
