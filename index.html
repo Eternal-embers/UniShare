@@ -9,8 +9,8 @@
     <meta name="author" content="劣等生">
     <meta name="keywords" content=“小说,图片,漫画,音乐,视频,娱乐”>
     <base target="_blank">
-    <link rel="stylesheet" type="text/css" href="resource/fontawesome-free-6.4.0-web/css/all.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="resource/fontawesome-free-6.5.1-web/css/all.css">
+    <link rel=" stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
@@ -20,7 +20,10 @@
 <script src="js/news.js" defer></script>
 <script src="js/user.js" defer></script>
 <script src="js/login.js" defer></script>
-<script src="js/mode.js" defet></script>
+<script src="js/mode.js" defer></script>
+<script src="js/sidebar.js" defer></script>
+<script src="js/image.js" defet></script>
+<script src="js/footer.js" defer></script>
 
 <!--允许复制的脚本-->
 <script id="allow-copy_script">(function agent() {
@@ -804,33 +807,33 @@
                 </div>
                 <div class="slider">
                     <div class="slide-item">
-                        <a href="./images/news_1.png">
-                            <img src="./images/news_1.png" alt="">
+                        <a href="./images/carosel/0.jpg">
+                            <img src="./images/carosel/0.jpg" alt="">
                         </a>
                     </div>
                     <div class="slide-item">
-                        <a href="./images/news_2.png">
-                            <img src="./images/news_2.png" alt="">
+                        <a href="./images/carosel/1.jpg">
+                            <img src="./images/carosel/1.jpg" alt="">
                         </a>
                     </div>
                     <div class="slide-item">
-                        <a href="./images/news_3.png">
-                            <img src="./images/news_3.png" alt="">
+                        <a href="./images/carosel/2.jpg">
+                            <img src="./images/carosel/2.jpg" alt="">
                         </a>
                     </div>
                     <div class="slide-item">
-                        <a href="./images/news_4.png">
-                            <img src="./images/news_4.png" alt="">
+                        <a href="./images/carosel/3.jpg">
+                            <img src="./images/carosel/3.jpg" alt="">
                         </a>
                     </div>
                     <div class="slide-item">
-                        <a href="./images/news_5.png">
-                            <img src="./images/news_5.png" alt="">
+                        <a href="./images/carosel/4.jpg">
+                            <img src="./images/carosel/4.jpg" alt="">
                         </a>
                     </div>
                     <div class="slide-item">
-                        <a href="./images/news_6.png">
-                            <img src="./images/news_6.png" alt="">
+                        <a href="./images/carosel/5.webp">
+                            <img src="./images/carosel/5.webp" alt="">
                         </a>
                     </div>
                 </div>
@@ -924,24 +927,98 @@
     </div>
 
     <div class="sidebar">
+        <input type="radio" style="display: none;" id="sidebar">
+        <div class="sidebar-icon" draggable="true"></div>
+        <div class="switch-icon" style="display: none;">
+            <svg t="1703323423096" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                p-id="6175">
+                <path
+                    d="M618.688 149.312l0 213.376L64 362.688 64 448l896 0L618.688 149.312zM405.312 874.688l0-213.376L960 661.312 960 576 64 576 405.312 874.688z"
+                    p-id="6176"></path>
+            </svg>
+        </div>
         <div class="sidebar-content">
-            <div id="novel">小说</div>
-            <div id="image">图片</div>
-            <div id="comics">漫画</div>
-            <div id="music">音乐</div>
-            <div id="video">视频</div>
-            <div id="add">+</div>
+            <div id="novel">
+                <svg t="1703139201674" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="5993">
+                    <path
+                        d="M671.288889 818.3808c-46.648889 0-124.404622 13.744356-136.533333 45.4656l0 0.705422c-27.0336 0.705422-33.427911 0-45.511111 0-12.105956-31.766756-89.884444-45.511111-136.533333-45.511111l-250.311111 0 0-659.911111 272.156444 0c58.732089 0 109.522489 30.173867 137.4208 74.706489 27.898311-44.532622 78.711467-74.706489 137.466311-74.706489L921.6 159.1296l0 659.2512L671.288889 818.3808zM489.244444 295.662933c0-53.202489-57.457778-91.022222-113.777778-91.022222l-227.555556 0 0 568.888889c0 0 162.178844 0 204.8 0 45.147022-0.796444 116.349156 0.477867 136.533333 33.723733l0-25.486222c-0.864711-31.493689-0.045511-74.501689 0-76.276622L489.244444 310.340267c0-0.022756 0-0.022756 0-0.045511L489.244444 295.662933zM876.088889 204.5952l-227.555556 0c-56.32 0-113.777778 37.796978-113.777778 90.9312l0 14.904889c0 0.022756 0 0.022756 0 0.045511l0 394.467556c0.045511 1.752178 0.864711 44.760178 0 76.1856l0 25.463467c20.184178-33.200356 91.386311-34.497422 136.533333-33.678222 42.621156 0 204.8 0 204.8 0L876.088889 204.5952z"
+                        p-id="5994"></path>
+                </svg>
+                <div class="name">小说</div>
+            </div>
+            <div id="image">
+                <svg t="1703151629803" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="232438">
+                    <path
+                        d="M91.428571 731.428571a18.285714 18.285714 0 0 1-11.702857-32.548571l201.142857-164.571429a18.285714 18.285714 0 0 1 23.04 0l169.325715 135.314286 207.725714-242.834286a18.285714 18.285714 0 0 1 25.6-1.828571l237.714286 201.142857a18.285714 18.285714 0 0 1-23.405715 27.794286l-223.817142-189.44-207.725715 242.468571a18.285714 18.285714 0 0 1-25.234285 2.194286L292.571429 571.977143l-189.44 155.428571a20.48 20.48 0 0 1-11.702858 4.022857z"
+                        p-id="232439"></path>
+                    <path
+                        d="M932.571429 896h-841.142858A18.285714 18.285714 0 0 1 73.142857 877.714286V146.285714a18.285714 18.285714 0 0 1 18.285714-18.285714h841.142858a18.285714 18.285714 0 0 1 18.285714 18.285714v731.428572a18.285714 18.285714 0 0 1-18.285714 18.285714zM109.714286 859.428571h804.571428v-694.857142H109.714286z"
+                        p-id="232440"></path>
+                    <path
+                        d="M438.857143 457.142857a91.428571 91.428571 0 1 1 91.428571-91.428571 91.428571 91.428571 0 0 1-91.428571 91.428571z m0-146.285714a54.857143 54.857143 0 1 0 54.857143 54.857143A54.857143 54.857143 0 0 0 438.857143 310.857143z"
+                        p-id="232441"></path>
+                </svg>
+                <div class="name">图片</div>
+            </div>
+            <div id="comics">
+                <svg t="1703151797259" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="242682">
+                    <path
+                        d="M418.304 162.816c27.648-4.096 55.296-6.144 81.92-6.144 270.848 0 491.008 194.048 491.008 433.152 0 238.592-220.16 432.64-491.008 432.64s-491.008-194.048-491.008-432.64c0-128.512 63.488-248.32 174.592-330.752V20.48l234.496 142.336z m523.264 426.496c0-210.944-198.144-382.976-441.344-382.976-27.136 0-55.296 2.56-82.944 7.168l-9.216 1.536-174.08-105.472v174.592l-10.752 7.68c-104.448 73.216-164.352 181.76-164.352 297.472 0 210.944 197.632 382.976 441.344 382.976 243.2 0 441.344-172.032 441.344-382.976z"
+                        p-id="242683"></path>
+                    <path
+                        d="M235.52 481.28l26.112-28.16c31.232 22.016 60.416 43.52 87.552 64l-29.696 31.744c-31.232-27.136-58.88-49.664-83.968-67.584z m16.896 307.2c20.48-59.904 37.888-123.904 52.736-192.512 14.848 6.144 28.672 11.264 41.472 15.36l-49.152 190.464-45.056-13.312z m3.072-437.248l26.624-26.112c22.528 16.384 51.712 39.936 88.064 70.144-11.776 10.752-22.016 20.48-30.72 29.184-35.328-32.256-62.976-56.32-83.968-73.216z m139.264 320v-29.696h290.816v29.184c-25.088 29.184-58.88 53.76-101.376 74.752 45.056 14.848 99.84 23.552 164.352 27.648-7.68 11.776-14.336 23.552-20.48 34.816-74.24-8.192-135.68-22.528-185.344-44.032-52.224 20.48-114.688 36.352-187.904 47.104-4.608-10.752-10.752-22.016-17.408-33.792 61.952-5.12 117.76-16.384 166.4-32.768-34.304-19.968-60.928-44.544-79.36-73.216h-29.696z m-18.944-167.936h343.04v120.832h-33.792v-13.312H409.6v13.312h-33.792v-120.832z m30.72-166.4h281.6v148.48h-33.792v-11.776H440.32v11.776h-33.792v-148.48z m3.072 244.736h70.144v-49.664H409.6v49.664z m244.736-216.576H440.32v27.136h214.016v-27.136z m-214.528 80.384h214.016v-27.136h-214.016v27.136z m201.216 225.792h-177.152c18.944 23.552 45.568 43.008 78.848 58.88 36.864-15.872 69.632-35.328 98.304-58.88z m-129.024-89.6h70.144v-49.664H512v49.664z m173.056-49.664h-70.144v49.664h70.144v-49.664z"
+                        p-id="242684"></path>
+                </svg>
+                <div class="name">漫画</div>
+            </div>
+            <div id="music">
+                <svg t="1703151411693" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="194211">
+                    <path
+                        d="M269.106506 960.158996c90.466408 0 164.010401-73.596182 164.010401-164.063613L433.116907 430.360631l458.870965-106.704231 0 344.858282c-26.991748-44.600801-77.970816-74.14979-135.264707-74.14979-90.466408 0-163.154917 73.596182-163.154917 164.090219 0 90.466408 72.226998 164.063613 162.693406 164.063613 90.480734 0 162.720012-73.597205 162.720012-164.063613L918.981666 63.83998 406.124136 183.013197l0 523.169387c-26.991748-44.626383-79.738066-74.176396-137.01763-74.176396-90.479711 0-164.090219 73.597205-164.090219 164.090219C105.016287 886.562814 178.626795 960.158996 269.106506 960.158996zM758.56921 895.52493c-75.586512 0-137.085168-61.497633-137.085168-137.070842 0-75.599815 61.498656-137.097448 137.085168-137.097448 75.598792 0 137.097448 61.497633 137.097448 137.097448C895.666658 834.027297 834.168002 895.52493 758.56921 895.52493zM891.988896 97.764628l0 198.173478-458.870965 106.717534L433.11793 204.495464 891.988896 97.764628zM269.171997 658.997935c75.586512 0 137.084145 61.497633 137.084145 137.097448 0 75.600839-61.497633 137.098471-137.084145 137.098471-75.599815 0-137.097448-61.497633-137.097448-137.098471C132.074549 720.495568 193.573205 658.997935 269.171997 658.997935z"
+                        p-id="194212"></path>
+                </svg>
+                <div class="name">音乐</div>
+            </div>
+            <div id="video">
+                <svg t="1703150783992" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="147777">
+                    <path
+                        d="M768 824.888889c79.644444 0 142.222222-62.577778 142.222222-142.222222V341.333333c0-79.644444-62.577778-142.222222-142.222222-142.222222H199.111111c-79.644444 0-142.222222 62.577778-142.222222 142.222222v341.333334c0 79.644444 62.577778 142.222222 142.222222 142.222222h568.888889m0 28.444444H199.111111c-93.866667 0-170.666667-76.8-170.666667-170.666666V341.333333c0-93.866667 76.8-170.666667 170.666667-170.666666h568.888889c93.866667 0 170.666667 76.8 170.666667 170.666666v341.333334c0 93.866667-76.8 170.666667-170.666667 170.666666z"
+                        p-id="147778"></path>
+                    <path
+                        d="M384 625.777778c2.844444 0 5.688889 0 8.533333-2.844445l199.111111-99.555555c5.688889-2.844444 5.688889-5.688889 5.688889-11.377778s-2.844444-8.533333-5.688889-11.377778L389.688889 398.222222c-2.844444 0-5.688889-2.844444-8.533333-2.844444-2.844444 0-5.688889 0-8.533334 2.844444-5.688889 2.844444-5.688889 5.688889-5.688889 11.377778v201.955556c0 5.688889 2.844444 8.533333 5.688889 11.377777 5.688889 2.844444 8.533333 2.844444 11.377778 2.844445m0 28.444444c-8.533333 0-14.222222-2.844444-19.911111-5.688889-14.222222-8.533333-19.911111-19.911111-19.911111-36.977777v-201.955556c0-14.222222 8.533333-28.444444 19.911111-36.977778 5.688889-2.844444 11.377778-2.844444 19.911111-2.844444 8.533333 0 14.222222 2.844444 19.911111 5.688889l199.111111 99.555555c14.222222 8.533333 22.755556 22.755556 22.755556 36.977778s-8.533333 28.444444-19.911111 36.977778l-199.111111 99.555555c-8.533333 2.844444-17.066667 5.688889-22.755556 5.688889z"
+                        p-id="147779"></path>
+                </svg>
+                <div class="name">视频</div>
+            </div>
+            <div id="note">
+                <svg t="1703158199094" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="271526">
+                    <path
+                        d="M881.664 699.904c-11.264 0-20.48 9.216-20.48 20.48V875.52c0 56.832-46.592 103.424-103.424 103.424H174.08c-56.832 0-103.424-46.592-103.424-103.424V150.016C70.656 92.672 117.248 46.08 174.08 46.08h583.68c56.832 0 103.424 46.592 103.424 103.424V414.72c0 11.264 9.216 20.48 20.48 20.48s20.48-9.216 20.48-20.48V150.016C902.144 70.144 837.12 5.12 757.76 5.12H174.08C94.208 5.12 29.696 70.144 29.696 150.016V875.52c0 79.872 65.024 144.384 144.384 144.384h583.68c79.872 0 144.384-65.024 144.384-144.384v-155.136c0-11.264-9.216-20.48-20.48-20.48z"
+                        p-id="271527"></path>
+                    <path
+                        d="M672.768 281.088H257.536c-11.264 0-20.48 9.216-20.48 20.48s9.216 20.48 20.48 20.48h415.232c11.264 0 20.48-9.216 20.48-20.48s-9.216-20.48-20.48-20.48zM672.768 485.376H257.536c-11.264 0-20.48 9.216-20.48 20.48s9.216 20.48 20.48 20.48h415.232c11.264 0 20.48-9.216 20.48-20.48s-9.216-20.48-20.48-20.48zM993.792 398.336c-8.704-7.168-21.504-5.632-28.672 3.072l-394.24 486.4c-7.168 8.704-5.632 21.504 3.072 28.672 3.584 3.072 8.192 4.608 12.8 4.608 6.144 0 11.776-2.56 15.872-7.68l394.24-486.4c6.656-8.704 5.632-21.504-3.072-28.672z"
+                        p-id="271528"></path>
+                </svg>
+                <div class="name">笔记</div>
+            </div>
         </div>
     </div>
 
     <div class="main">
         <div class="section">
             <div class="tools">
-                <div id="sort"><svg t="1701879922875" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                <div id="sort">
+                    <svg t="1701879922875" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="4227">
                         <path
                             d="M800.256 741.888l47.616-47.616a31.744 31.744 0 0 1 45.056 45.056l-102.4 102.4a31.744 31.744 0 0 1-54.272-22.528V204.8a32.256 32.256 0 0 1 64 0zM153.6 237.056a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z m0 307.2a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z m0 307.2a32.256 32.256 0 0 1 0-64h460.8a32.256 32.256 0 0 1 0 64z"
-                            fill="#5A5A68" p-id="4228"></path>
+                            p-id="4228"></path>
                     </svg>
                     <span>排序</span>
                 </div>
@@ -962,228 +1039,93 @@
                         xmlns="http://www.w3.org/2000/svg" p-id="15088">
                         <path
                             d="M897.939 71.662 605.268 71.662c-33.502 0-55.542 27.33-55.542 55.537l0 291.796c0 27.326 22.04 55.537 55.542 55.537l291.791 0c33.502 0 55.537-27.331 55.537-55.537L952.596 126.318C952.596 98.988 930.561 71.662 897.939 71.662zM905.552 407.767c0 7.372-5.733 18.835-18.838 18.835L615.612 426.602c-12.286 0-18.838-10.643-18.838-18.835L596.774 136.663c0-7.369 5.733-18.837 18.838-18.837l271.92 0.818c12.286 0 18.02 10.65 18.02 18.019L905.552 407.767z"
-                            fill="#272636" p-id="15089"></path>
+                            p-id="15089"></path>
                         <path d="M897.939 71.662" fill="#272636" p-id="15090"></path>
                         <path
                             d="M897.939 551.227 605.268 551.227c-33.502 0-55.542 27.328-55.542 55.537l0 291.794c0 27.331 22.04 55.54 55.542 55.54l291.791 0c33.502 0 55.537-27.33 55.537-55.54L952.596 605.886C952.596 578.555 930.561 551.227 897.939 551.227zM905.552 887.332c0 7.371-5.731 18.838-18.84 18.838L615.614 906.17c-12.288 0-18.84-10.651-18.84-18.838L596.774 616.23c0-7.371 5.731-18.838 18.84-18.838l271.918 0 0 0.816c12.288 0 18.02 10.65 18.02 18.021L905.552 887.332z"
-                            fill="#272636" p-id="15091"></path>
+                            p-id="15091"></path>
                         <path
                             d="M420.438 70.451 127.766 70.451c-33.501 0-55.542 27.331-55.542 55.538l0 291.796c0 27.326 22.041 55.537 55.542 55.537l291.792 0c33.501 0 55.538-27.331 55.538-55.537L475.096 125.108C475.095 97.777 453.059 70.451 420.438 70.451zM428.05 406.557c0 7.372-5.733 18.835-18.837 18.835L138.11 425.392c-12.286 0-18.837-10.643-18.837-18.835L119.273 135.453c0-7.369 5.733-18.837 18.837-18.837l271.92 0.818c12.286 0 18.019 10.65 18.019 18.019L428.049 406.557z"
-                            fill="#272636" p-id="15092"></path>
+                            p-id="15092"></path>
                         <path
                             d="M420.438 550.017 127.766 550.017c-33.501 0-55.542 27.328-55.542 55.537l0 291.794c0 27.33 22.041 55.539 55.542 55.539l291.792 0c33.501 0 55.538-27.33 55.538-55.539L475.096 604.675C475.095 577.345 453.059 550.017 420.438 550.017zM428.05 886.122c0 7.37-5.731 18.837-18.84 18.837L138.113 904.959c-12.288 0-18.84-10.65-18.84-18.837L119.273 615.02c0-7.37 5.731-18.837 18.84-18.837l271.918 0 0 0.816c12.288 0 18.019 10.65 18.019 18.021L428.05 886.122z"
-                            fill="#272636" p-id="15093"></path>
+                            p-id="15093"></path>
                         <path d="M897.939 551.227" fill="#272636" p-id="15094"></path>
                     </svg>
                     <span>排列</span>
                 </div>
             </div>
-            <div class="item-container">
+            <div class="image-container">
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/00374acc7b911af924564a4c44d1be67_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/03b7cdc2607b3f3a8ea87e3e5818ce57_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/2c6559d7904abd2d590aac3a5c8f3fb8_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/5e531c100026750a22ce1e14b505bec9_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/b9d0a15dd24ee8469a07855ba115716d_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/c1dba5e9651b2b4361f6670118cad79c_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/86081a5c0d09b4ddb72b41db50fedee2_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/becf8ac619379bec4ca75c0c018be96d_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/90eaf75ab59ba27ff0dbc3479f8b2212_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/c7064507b9f64c14b014361d584712d9_bp.jpg" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/a65a2ca0951f2d5df991d472584a9887_bp.png" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img
+                            data-src="./images/ANIME-PICTURES.NET_-_798957-1167x2048-genshin+impact-eula+lawrence-utsuhostoria-single-tall+image-looking+at+viewer.jpg"
+                            src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img
+                            data-src="./images/ANIME-PICTURES.NET_-_798957-1167x2048-genshin+impact-eula+lawrence-utsuhostoria-single-tall+image-looking+at+viewer.jpg"
+                            src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img data-src="./images/8ff7da78631fddc163be64afbb08bea1_bp.png" src=""></a>
                 </div>
                 <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
-                </div>
-                <div class="item">
-                    <div class="image"><a href=""><img src="" alt=""></a></div>
-                    <div class="title"></div>
-                    <div class="intro"></div>
+                    <a href=""><img
+                            data-src="./images/ANIME-PICTURES.NET_-_799052-1200x1688-genshin+impact-barbara+(genshin+impact)-barbara+(summertime+sparkle)+(genshin+impact)-senkou+noah-single-long+hair.png"
+                            src=""></a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
+        <div class="top"></div>
+        <div class="anime-img"></div>
+        <div class="pekka"></div>
+        <div class="follow">
+            <h3>关注我们</h3>
+            <a href=""><i class="fa-brands fa-weixin"></i></a>
+            <a href=""><i class="fa-brands fa-weibo"></i></a>
+            <a href=""> <i class="fa-brands fa-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-bilibili"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
         <div class="info">
             <div class="about">
                 <h3>网站信息</h3>
@@ -1215,10 +1157,6 @@
             <a href="https://www.zhihu.com/people/13-47-79-44" class="copyright">Copyright ©1998 - 2023 聚悦. All
                 Rights Reserved.</a>
         </div>
-    </div>
-
-
-
 </body>
 <script>
     /* 监听页面滚动 */

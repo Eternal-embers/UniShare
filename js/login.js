@@ -63,3 +63,25 @@ function switch_login() {
     }
 }
 
+/* 国家手机区域码的列表显示 */
+var country_code = document.querySelector('.country-code');
+var country_code_list = document.querySelector('.country-code-list');
+var country_code_list_decs = document.querySelectorAll('.country-code-list-dec');
+
+function open_country_list() {
+    country_code_list.style.display = 'block';
+    country_code_list_decs.forEach((element) => {
+        element.addEventListener('click', selectCountryCode);
+    });
+}
+
+function close_country_list() {
+    country_code_list.style.display = 'none';
+    country_code_list_decs.forEach((element) => {
+        element.removeEventListener('click', selectCountryCode);
+    });
+}
+
+function selectCountryCode() {
+    country_code.textContent = this.querySelector('span:nth-child(2)').textContent;
+}

@@ -1,15 +1,49 @@
 .footer {
+    position: relative;
     background-color: #f0f0f0;
-    padding: 2vh 1vw 3vh 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20vh;
+}
+
+.footer * {
+    color: rgba(0, 0, 0, 0.7);
 }
 
 /* ======================== footer的暗色主题 ======================== */
 .footer-dark {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
+}
+
+.footer-dark .anime-img,
+.footer-dark .pekka {
+    opacity: 0.6;
+}
+
+.footer-dark .follow h3,
+.footer-dark .follow a i {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer.footer-dark .follow a:nth-child(4) i {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer.footer-dark .follow a:nth-child(4) i:hover {
+    background-color: none;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer.footer-dark .follow a:nth-child(8) i:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 1);
+}
+
+.footer-dark .top {
+    background-color: black !important;
 }
 
 .footer-dark .info *,
@@ -28,32 +62,151 @@
     filter: drop-shadow(0 10vw rgba(255, 255, 255, 0.5));
 }
 
-.footer .info {
-    padding: 2vh 0;
-    display: flex;
-    justify-content: center;
+/* ========================footer的亮色主题======================== */
+
+.footer .top {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    transform: skewY(2.5deg) translateY(-16%);
+    z-index: -1;
 }
 
-.footer * {
-    color: rgba(0, 0, 0, 0.8);
+.footer .anime-img {
+    position: absolute;
+    top: -8vh;
+    left: 2vw;
+    width: 10vw;
+    height: 50vh;
+    background-image: url("../images/footer/role0.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.footer .pekka {
+    position: absolute;
+    top: -22vh;
+    right: 2vw;
+    width: 10vw;
+    height: 10vw;
+    transform: rotate(2deg);
+    background-image: url("../images/footer/0.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.footer .follow {
+    width: 68vw;
+    padding: 2vh 2vw;
+    display: flex;
+    align-items: center;
+    gap: 2.5vw;
+}
+
+.footer .follow i {
+    font-size: 1.5vw;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all ease-out 0.3s;
+}
+
+.footer .follow i:hover {
+    transform: scale(1.2);
+}
+
+.footer .follow a:nth-child(4) i {
+    color: #fff;
+    font-size: 1.6vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer .follow a:nth-child(8) i {
+    width: 1.8vw;
+    height: 1.8vw;
+    line-height: 1.8vw;
+    border-radius: 1vh;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+.footer .follow a:nth-child(9) {
+    position: relative;
+    left: -0.5vw;
+}
+
+.footer .follow a:nth-child(9) i {
+    width: 1.8vw;
+    height: 1.8vw;
+    line-height: 1.8vw;
+    border-radius: 2vw;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+.footer .follow a:nth-child(5) i,
+.footer .follow a:nth-child(6) i {
+    font-size: 1.6vw;
+}
+
+.footer .follow a:nth-child(2) i:hover {
+    color: rgba(80, 180, 120, 1);
+}
+
+.footer .follow a:nth-child(3) i:hover {
+    color: rgba(255, 100, 100, 1);
+}
+
+.footer .follow a:nth-child(4) i:hover {
+    color: rgba(0, 0, 0, 0.7);
+    background: none;
+}
+
+.footer .follow a:nth-child(5) i:hover {
+    color: rgba(60, 120, 255, 1);
+}
+
+.footer .follow a:nth-child(6) i:hover {
+    color: rgba(255, 60, 60, 1);
+}
+
+.footer .follow a:nth-child(7) i:hover {
+    color: #fb7299;
+}
+
+.footer .follow a:nth-child(8) i:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+}
+
+.footer .follow a:nth-child(9) i:hover {
+    background-color: rgba(0, 120, 255, 1);
+    color: #fff;
+}
+
+.footer .info {
+    display: flex;
+    justify-content: center;
+    padding: 4vh 2vw;
 }
 
 .footer .info .about,
-.help,
-.cooperation,
-.UniShare-logo {
+.footer .info .help,
+.footer .info .cooperation {
     width: 20vw;
 }
 
 .footer .info .about div,
-.help div,
-.cooperation div {
-    width: 20vw;
-    margin: 1vh 0;
+.footer .info .help div,
+.footer .info .cooperation div {
+    padding: 0.5vh 0;
 }
 
-.info div h3 {
-    font-weight: bold;
+.footer .info h3 {
+    padding: 1vh 0;
 }
 
 .info div a {
@@ -63,13 +216,14 @@
 
 .info div a:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .info .UniShare-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vw;
+    width: 8vw;
     overflow: hidden;
 }
 
@@ -81,15 +235,15 @@
 }
 
 .footer .copyright {
-    width: 25vw;
+    width: 100%;
+    padding: 2vh 0;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .copyright a {
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
